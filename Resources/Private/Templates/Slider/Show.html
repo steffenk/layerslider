@@ -1,0 +1,112 @@
+{namespace mru=MINAV\Layerslider\ViewHelpers}
+<f:flashMessages />
+<f:if condition="{tsincluded}">
+    <f:then>
+        <f:if condition="{slider.slides}">
+            <div class="inner">
+                <div>
+                    <div class="layerslider-{slider.uid}" style="width: {slider.options.width}; height: {slider.options.height};  margin: 0 auto;" {f:render(partial:'Slider/DataAttributes', arguments:'{slider:slider}', section:'data')} >
+                        <f:for each="{slider.slides}" as="s" iteration="i">
+                            <div class="ls-slide{f:if(condition: '{s.configuration.cssClass}', then:' {s.configuration.cssClass}')} ls-slider-{slider.uid}-slide-{s.uid}" style="" data-ls="{f:render(partial:'Slide/Slideattributes', arguments:'{s:s}', section:'data')}">
+                                <f:if condition="{slider.usefal}">
+                                    <f:then>
+                                        <f:if condition="{slider.options.useSrcset}">
+                                            <f:then>
+                                                <f:image
+                                                        src="{s.falimage.originalResource.originalFile.uid}"
+                                                        class="ls-bg"
+                                                        alt="{s.falimage.originalResource.alternative}"
+                                                        title="{s.falimage.originalResource.title}"
+                                                        additionalAttributes="{srcset:'{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'1600\')} 1600w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'1200\')} 1200w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'980\')} 980w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'768\')} 768w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'560\')} 560w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'480\')} 480w,{f:uri.image(src:\'{s.falimage.originalResource.originalFile.uid}\', width:\'360\')} 360w'}"/>
+                                            </f:then>
+                                            <f:else>
+                                                <f:image
+                                                        src="{s.falimage.originalResource.originalFile.uid}"
+                                                        class="ls-bg"
+                                                        alt="{s.falimage.originalResource.alternative}"
+                                                        title="{s.falimage.originalResource.title}"
+                                                        />
+
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                    <f:else>
+                                        <img class="ls-bg" src="{f:uri.image(src:'uploads/tx_layerslider/{s.image}')}" >
+                                    </f:else>
+                                </f:if>
+
+                                    <f:for each="{s.items}" as="item">
+
+                                        <f:if condition="{item.link}">
+                                            <f:then>
+                                                <mru:link.typolink parameter="{item.link}" class="ls-l" additionalAttributes="{data-ls: '{f:render(partial:\'Item/Layerattributes\', arguments:\'{item:item}\', section:\'data\')}', style:'{f:render(partial:\'Item/Layerattributes\', arguments:\'{item:item}\', section:\'style\')}'}">
+                                                    <f:render section="layerContent" arguments="{item: item, slider: slider}" />
+                                                </mru:link.typolink>
+                                            </f:then>
+                                            <f:else>
+                                                <f:render section="layerContent" arguments="{item: item, slider: slider}" />
+                                            </f:else>
+                                        </f:if>
+                                    </f:for>
+
+                                <f:if condition="{s.configuration.linkSlide}">
+                                    <mru:link.typolink parameter="{s.configuration.linkSlide}" class="ls-link">&nbsp;</mru:link.typolink>
+                                </f:if>
+
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+
+    </f:then>
+    <f:else>
+        <p>You forgot to include the static extension template in the root template!</p>
+    </f:else>
+</f:if>
+
+<f:section name="layerContent">
+    <f:if condition="{0:item.contenttype} == {0:'image'}">
+        <f:if condition="{slider.usefal}">
+            <f:then>
+                <img id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}" src="{f:uri.image(src:'{item.falimage.originalResource.originalFile.uid}')}" alt="{item.falimage.originalResource.alternative}" title="{item.falimage.originalResource.title}" />
+            </f:then>
+            <f:else>
+                <f:if condition="{item.content}">
+                    <img id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}" src="{f:uri.image(src:'uploads/tx_layerslider/{item.content}')}" alt="" title="" />
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'paragraph'}">
+        <p id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</p>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'span'}">
+        <span id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</span>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'h1'}">
+        <h1 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h1>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h2'}">
+        <h2 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h2>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h3'}">
+        <h3 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h3>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h4'}">
+        <h4 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h4>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h5'}">
+        <h5 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h5>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h6'}">
+        <h6 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h6>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'html'}">
+        <div id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}"><f:format.html parseFuncTSPath="">{item.content}</f:format.html></div>
+    </f:if>
+</f:section>

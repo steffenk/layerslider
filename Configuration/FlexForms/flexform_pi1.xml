@@ -1,0 +1,22 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Options</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.slider>
+                        <TCEforms>
+                            <config>
+                                <type>user</type>
+                                <userFunc>MINAV\Layerslider\Plugins\Slider->plugin</userFunc>
+                            </config>
+                        </TCEforms>
+                    </settings.slider>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

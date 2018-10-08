@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file target-language="de" datatype="plaintext" original="messages" date="2013-11-06T14:47:41Z" product-name="layerslider">
+		<header/>
+		<body>
+			<trans-unit id="slider.list.header">
+				<target>Erstellte Slider</target>
+			</trans-unit>
+			<trans-unit id="slider.list.news">
+				<target>Layerslider News</target>
+			</trans-unit>
+			<trans-unit id="slider.list.news.more">
+				<target>Diese News lesen</target>
+			</trans-unit>
+			<trans-unit id="slider.list.noslider.text">
+				<target>Es ist noch kein Slider vorhanden. Erstelle einen neuen und wähle zwischen diesen Möglichkeiten:</target>
+			</trans-unit>
+			<trans-unit id="slider.list.noslider.button.byhand">
+				<target>Neuer Slider manuell erstellen</target>
+			</trans-unit>
+			<trans-unit id="slider.list.noslider.button.wizard">
+				<target>Slider mit dem Assistenten erstellen</target>
+			</trans-unit>
+			<trans-unit id="slider.list.buttons.edit">
+				<target>Slider bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="slider.list.buttons.copy">
+				<target>Slider kopieren</target>
+			</trans-unit>
+			<trans-unit id="slider.list.buttons.delete">
+				<target>Slider löschen</target>
+			</trans-unit>
+			<trans-unit id="slider.list.warning.maxInputVars.header">
+				<target>Achtung</target>
+			</trans-unit>
+			<trans-unit id="slider.list.warning.maxInputVars.body">
+				<target>Die php Konfiguration "max_input_vars" ist sehr klein. Wenn Du einen Slider anlegst, der viele Slides und Layers hat, kann es zu Problemen beim speichern kommen. In diesem Fall solltest Du den Wert auf 4000 oder höher setzen.</target>
+			</trans-unit>
+			<trans-unit id="slider.list.warning.maxInputVarsExceeded.header">
+				<target>Achtung</target>
+			</trans-unit>
+			<trans-unit id="slider.list.warning.maxInputVarsExceeded.body">
+				<target>Die php Konfiguration "max_input_vars" ist kleiner als benötigt. Dein Slider wurde nicht komplett gepseichert. Bitte erhöhe die php "max_input_vars" Einstellung.</target>
+			</trans-unit>
+			<trans-unit id="slider.list.v6warning">
+				<target>Achtung: Dieser Slider ist nicht mit der Version 6 der Extension kompatibel. Klicke hier um den Updateprozess für diesen Slider zu starten.</target>
+			</trans-unit>
+			<trans-unit id="slider.list.v6updatedone">
+				<target>Der Slider wurde aktualisiert.</target>
+			</trans-unit>
+			<trans-unit id="slider.edit.header.manage">
+				<target>Slides verwalten</target>
+			</trans-unit>
+			<trans-unit id="slider.edit.button.newslide">
+				<target>Neuer Slide (Änderungen speichern)</target>
+			</trans-unit>
+			<trans-unit id="slider.new.header">
+				<target>Neuer Slider erstellen</target>
+			</trans-unit>
+			<trans-unit id="slider.new.form.title.label">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="slider.new.form.title.text">
+				<target>Name des Sliders. Nach Eingabe des Namens bitte speichern. Du wirst automatisch in die Verwaltung weitergeleitet.</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.header">
+				<target>Slider mit dem Assistenten erstellen</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.subheader">
+				<target>Bitte wähle die Art des Sliders aus, den Du erstellen möchtest.</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.type.header">
+				<target>Art des Sliders</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.standard.header">
+				<target>Normal</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.standard.text">
+				<target>Wähle diese Option aus, um einen Slider zu erstellen, der innherhalb Deines Layout platziert wird. Der Slider passt sich dabei automatisch an deine Layoutbreite an und ist responsive.</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.fullwidth.header">
+				<target>Ganze Breite</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.fullwidth.text">
+				<target>Wähle diese Option, wenn der Slider über die ganze Breite gehen soll. Bitte beachte dabei, dass das umschliessende Element um den Slider herum ebenfalls eine Breite von 100% aufweist. Ansonsten kann der Slider nicht über die komplette Breite dargestellt werden.</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.fullsize.header">
+				<target>Volle Größe</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.option.fullsize.text">
+				<target>Der Slider wird die Breite und höhe des Browserfensters haben. Vorhandene Elemente über dem Slider werden berücksichtigt</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.button.back">
+				<target>Zurück zur Übersicht (evt. vorhandene Konfiguration wird nicht gespeichert!)</target>
+			</trans-unit>
+			<trans-unit id="wizard.index.button.next">
+				<target>Nächster Schritt: Bilder auswählen</target>
+			</trans-unit>
+			<trans-unit id="wizard.step1.header">
+				<target>Bilder für die Slides</target>
+			</trans-unit>
+			<trans-unit id="wizard.step1.text">
+				<target><![CDATA[<p>Jedes Bild ergibt einen Slide. Du kannst beliebig viele Bilder hinzufügen. Um das beste Resultat zu bekommen, solltest Du darauf achten, dass alle Bilder die gleichen Abmessungen haben.</p>
+					<p>Wenn Dein Layoutbereich der Webseite zum Beispiel 1200px breit ist, sollten die Bilder für die Slides ebenfalls 1200px breit sein. Kleinere Bilder werden ansonsten unschön dargestellt.</p>]]></target>
+			</trans-unit>
+			<trans-unit id="wizard.step1.button.back">
+				<target>Zurück zum Anfang</target>
+			</trans-unit>
+			<trans-unit id="wizard.step1.button.next">
+				<target>Nächster Schritt: Weitere Einstellungen</target>
+			</trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<trans-unit id="wizard.step2.header">
+				<target>Definiere weitere Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.subheader">
+				<target>Du kannst die Optionen so lassen wie sie sind, oder nach belieben umstellen.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.header">
+				<target>Deine Slides</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.fullwidth.header">
+				<target>Erweiterte Einstellung für ganze Breite</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.fullwidth.pagewidth.header">
+				<target>Breite des Layouts für Inhalte</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.fullwidth.pagewidth.text">
+				<target><![CDATA[<p>Du hast ausgewählt, dass Du einen Slider über die ganze Breite erstellen möchtest. Der Slider wird also immer genauso breit sein, wie das Browserfenster. Hier kannst Du nun die Breite des Inhaltsbereiches angeben. Sofern Du etwas einträgst, kannst Du später Ebenen erstellen, die in diesem Bereich gefangen sind. Die Ebenen sind  mit dem Seiteninhalt zentriert, und verkleinern sich erst, wenn das Browserfenster kleiner als die eingegebe Zahl wird.</p>]]></target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.header">
+				<target>Navigation</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.light.header">
+				<target>Helle Navigation</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.light.text">
+				<target>Setze diese Option, damit die Navigation im Slider in Weiss angezeigt wird.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.dark.header">
+				<target>Dunkle Navigation</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.dark.text">
+				<target>Setze diese Option, damit die Navigation im Slider dunkel erscheint.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.no.header">
+				<target>Keine Navigation</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.controls.no.text">
+				<target>Möchtest Du keine Navigation im Slider haben, setze diese Option.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.hover.header">
+				<target>Vorschaubilder bei Mouseover anzeigen</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.hover.text">
+				<target>Wird mit der Maus über die unteren Punkte der Slider-Navigation bewegt, erscheinen kleine Vorschaubilder.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.always.header">
+				<target>Vorschaubilder immer zeigen</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.always.text">
+				<target>Die kleinen Navigationspunkte pro Slide sind deaktiviert. Die Vorschaubilder werden grundsätzlich angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.hide.header">
+				<target>Keine Vorschaubilder</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.thumbs.hide.text">
+				<target>Wenn du keine Vorschaubilder anzeigen möchtest, weder immer noch bei Mouseover, dann aktiviere diese Option.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.timingeffect.header">
+				<target>Zeiteinstellung und Effekt</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.timingeffect.timing.header">
+				<target>Zeiteinstellung für die Slides</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.timingeffect.timing.text">
+				<target>Du kannst auswählen, wie lange ein Slide sichtbar sein soll, bevor der nächste Slide eingeblendet wird. Standardwert ist 4 Sekunden. Die Werte entsprechen Millisekunden. 1000 Millisekunden = 1 Sekunde.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.timingeffect.effect.header">
+				<target>Übergangseffekt</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.slides.settings.timingeffect.effect.text">
+				<target>Hier kannst Du aus ein paar verschiedenen Übergangseffekten auswählen. Dieser Effekt würd für den Wechsel zum nächsten Slide verwendet. Du kannst später aus vielen weiteren Effekten auswählen. Ausserdem kannst Du für einen Slide später auch mehrere Effekte gleichzteitig auswählen.</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.button.back">
+				<target>Zurück zu den Bildern</target>
+			</trans-unit>
+			<trans-unit id="wizard.step2.button.next">
+				<target>Fertigstellen: Speichern und öffnen</target>
+			</trans-unit>
+
+			<trans-unit id="migration.index.header">
+				<target>Migrationsassistent für das jQuery Layerslider Plugin</target>
+			</trans-unit>
+			<trans-unit id="migration.index.information">
+				<target>Über diesen Assistent</target>
+			</trans-unit>
+			<trans-unit id="migration.index.information.text">
+				<target>
+					<![CDATA[
+					<p>
+						Mit diesem Assistenten kannst Du ganz einfach das <a href="http://codecanyon.net/item/layerslider-responsive-jquery-slider-plugin/922100" target="_blank">jQuery Layerslider Plugin</a> in diese Extension integrieren.
+						Das ZIP Archiv, welches Du auf CodeCanyon heruntergeladen hast, ist sehr groß und kann deshalb nicht komplett hochgeladen werden. Dieser Assistent zeigt die eine Liste aller Dateien, die benötigt werden.
+						Jede Datei wird auf ihre existenz geprüft. Ob die Datei vorhanden ist oder nicht, kannst Du in der unteren Liste sehen.<br />
+						Um das jQuery Layerslider Plugin zu integrieren, kannst Du einzelne Dateien oder auch den kompletten layerslider Ordner aus dem ZIP Archiv von CodeCanyon auf den
+						Drag & Drop Bereich unten ziehen und dort ablegen. Der Assistent kennt jede Datei und legt sie am richtigen Ort ab.<br />
+						Einzelne Dateien zu einem Skin kannst Du hier nicht ablegen. Möchtest Du einzelne Skins aktualiseren oder hochladen, ziehe immer den ganzen Skin Ordner auf den Bereich.<br />
+						Du kannst diesen Assistenten auch benutzen, um eine vorhandene Installation des jQuery Layerslider Plugins zu aktualiseren.
+					</p>
+					]]>
+				</target>
+			</trans-unit>
+			<trans-unit id="migration.index.uploadarea.header">
+				<target>Uploadbereich</target>
+			</trans-unit>
+			<trans-unit id="migration.index.uploadarea.btn.recheck">
+				<target>Seite neu laden &amp; Dateistatus prüfen</target>
+			</trans-unit>
+			<trans-unit id="migration.index.uploadarea.defaultmessage.init">
+				<target>Lege hier eine einzelne Datei oder den ganzen Layerslider Ordner ab</target>
+			</trans-unit>
+			<trans-unit id="migration.index.uploadarea.defaultmessage.extended">
+				<target>Alle Dateien verarbeitet. Lege hier erneut eine einzelne Datei oder den ganzen Layerslider Ordner zum hochladen ab</target>
+			</trans-unit>
+			<trans-unit id="migration.index.file.exist">
+				<target>Datei vorhanden</target>
+			</trans-unit>
+			<trans-unit id="migration.index.file.miss">
+				<target>Datei fehlt</target>
+			</trans-unit>
+			<trans-unit id="controller.migration.upload.error.filepath">
+				<target>Dateipfad nicht übergeben</target>
+			</trans-unit>
+			<trans-unit id="controller.migration.upload.error.filesize">
+				<target>Dateigröße nicht übergeben</target>
+			</trans-unit>
+			<trans-unit id="controller.migration.upload.error.expectedfile">
+				<source>Die hocgeladene Datei entspricht nicht Ihrem eigentlichen Ziel</source>
+			</trans-unit>
+			<trans-unit id="controller.migration.upload.error.notallowed">
+				<target>Diese Datei ist für den Upload nicht zugelassen</target>
+			</trans-unit>
+			<trans-unit id="controller.migration.upload.error.skinfilewofolder">
+				<target>Datei nicht gespeichert. Skin-Dateien müssen immer mit ihrem Skin Ordner hochgeladen werden.</target>
+			</trans-unit>
+
+			<trans-unit id="slide.linkfile.image.title">
+				<target>Bild Titel</target>
+			</trans-unit>
+			<trans-unit id="slide.linkfile.image.alternative">
+				<target>Bild alternativer Text</target>
+			</trans-unit>
+
+			<trans-unit id="item.linkfile.image.title">
+				<target>Bild Titel</target>
+			</trans-unit>
+			<trans-unit id="item.linkfile.image.alternative">
+				<target>Bild alternativer Text</target>
+			</trans-unit>
+
+			<trans-unit id="partial.item.singleitem.headerbuttons.edit">
+				<target>Ebene bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.headerbuttons.copy">
+				<target>Ebene kopieren. Slider zuerst speichern!</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.headerbuttons.stopcopy">
+				<target>Kopieren der Ebene beenden</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.headerbuttons.delete">
+				<target>Ebene löschen</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.headerbuttons.sort">
+				<target>Ebene sortieren (Slider danach speichern!)</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.headerbuttons.paste">
+				<target>Ebene danach einfügen</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.type">
+				<target>Ebenentyp:</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.content">
+				<target>Inhalt:</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic">
+				<target>Grundeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.label">
+				<target>Slide Hintergrundoptionen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgsize.label">
+				<target>bgsize</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgsize.text">
+				<target>inherit, auto, cover, contain, stretch</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgsize.text1">
+				<target>Die Größe des Slider Hintergrund. Benutze inherit, wenn Du die globale Einstellung aus den Slideroptionen verwenden möchtest</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgposition.label">
+				<target>bgposition</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgposition.text">
+				<target>inherit, css Wert z.B. 50% 50%</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgposition.text1">
+				<target>Die Position des Slide Hintergrundbildes. Lasse es leer oder trage inherit ein, um die Einstellung aus den Slider Optionen zu verwenden</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgcolor.label">
+				<target>bgcolor</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgcolor.text">
+				<target>css value</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.background.bgcolor.text1">
+				<target>Die Hintergrundfarbe für den Slide. Du kannst CSS Farbnamen, Hexadezimalwerte, RGBA oder RGAB Werte eintragen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.label">
+				<target>Übergangseffekt Optionen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.duration.label">
+				<target>duration</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.duration.text">
+				<target>num (millisekunden). Default: 4000</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.duration.text1">
+				<target>Die Dauer wie lange der Slide sichtbar ist.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.transitionduration.label">
+				<target>transitionduration</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.transitionduration.text">
+				<target>integer (Millisekunden)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transition.transitionduration.text1">
+				<target>Du kannst die Geschwindigkeit des Übergangeffektes hier beeinflussen. 1000 Millisekunden = 1 Sekunde.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.label">
+				<target>Ken Burns Effekt</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.label">
+				<target>kenburnszoom</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.text">
+				<target>- , in, out</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.text1">
+				<target>Wähle einen Ken Burns Effekt für den Slide Hintergrund</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.label">
+				<target>kenburnsscale</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.text">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.text1">
+				<source>Erhöhe oder verringere die Größe des Slide Hintergrundbildes in Verbindung mit dem Ken Burns Effekt. Der Standardwert beträgt 1, der Wert von 2 wird die Bildgröße verdoppeln, während ein Wert von 0.5 das Bild zur Hälfte verkleinert.</source>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.label">
+				<target>kenburnsrotate</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.text">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.text1">
+				<target>Der Wert der Rotation beim Ken Burns Effekt in Grad. Negative Werte erlauben das rotieren entgegen des Uhrzegersinns</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.label">
+				<target>Parallax Defaultwerte für Ebenen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.label">
+				<target>parallaxtype</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.text">
+				<target>2d, 3d</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.text1">
+				<target>Standardeinstellung für den Parallxtyp für Ebenen dieses Slides</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.label">
+				<target>parallaxevent</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.text">
+				<target>cursor, scroll</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.text1">
+				<target>YDu kannst den Parallax Effekt entweder bei Mausbewegung/kippen des mobile Nedgerätes, oder beim scrollen der Seite auslösen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.label">
+				<target>parallaxaxis</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.text">
+				<target>none, both, x, y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.text1">
+				<target>Wähle aus, auf welcher Achse sich die Ebenen beim Parallax Effekt bewegen sollen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.label">
+				<target>parallaxtransformorigin</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.text">
+				<target>css value, like 50% 50% 0</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.text1">
+				<target>Setzt den Punkt auf der Ebene, von dem die Transformation der Ebene aus durchgeführt wird. Ebenen werden beim Parallax Effekt vom zentrum aus gerechnet. Mit dieser Einstellung kann der Punkt verschoben werden, zum Beispiel an eine der Ecken der Ebene. Die drei aufeinanderfolgenden Werte repräsentieren die X, Y und Z achse im 3D Raum. Es sind Pixelwerte, Prozentualwerte oder Schlagwörter wie top, right, bottom, left oder center möglich.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.label">
+				<target>parallaxdurationmove</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.text">
+				<target>integer in Millisekunden</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.text1">
+				<target>Kontrolliert die Geschwindigkeit von animierenden Ebenen wenn die Maus bewegt wird</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.label">
+				<target>parallaxdurationleave</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.text">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.text1">
+				<target>Kontrolliert, wie schnell die Ebene zurück zu Ihrer Ausgangsposition geht, wenn die Maus ausserhalb des Sliders bewegt wird</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.label">
+				<target>parallaxdistance</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.text">
+				<target>num</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.text1">
+				<target>Erhöht oder verringert die Strecke, welche die Ebene bei Mausbewegung für den Parallaxeffekt zurücklegt</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.label">
+				<target>parallaxrotate</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.text">
+				<target>num</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.text1">
+				<target>Erhöht oder verringert den Wert der Rotation der Ebenen im 3D Raum bei Mausbewegung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.label">
+				<target>parallaxtransformperspective</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.text">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.text1">
+				<target>Ändert die Perspektive der Ebenen im 3D Raum</target>
+			</trans-unit>
+
+
+
+
+
+			<trans-unit id="partial.item.singleitem.tabs.basic.access">
+				<target>Zugriff</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.content">
+				<target>Inhalt</target>
+			</trans-unit>
+
+			<trans-unit id="partial.item.singleitem.tabs.basic.visibility.label">
+				<target>Sichtbarkeit</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.visibility.text">
+				<target>Ebene verstecken</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.starttime.label">
+				<target>Startdatum und Startzeit</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.endtime.label">
+				<target>Enddatum und Endzeit</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.name.label">
+				<target>Name für diese Ebene</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.name.text">
+				<target>Der Name wird nur im TYPO3 Backend verwendet</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.label">
+				<target>Art des Inhalts</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.text">
+				<target>Wähle die Art des Inhalts aus verschiedenen Optionen aus</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.paragraph">
+				<target>Absatz</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.span">
+				<target>Span</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h1">
+				<target>Überschrift 1</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h2">
+				<target>Überschrift 2</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h3">
+				<target>Überschrift 3</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h4">
+				<target>Überschrift 4</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h5">
+				<target>Überschrift 5</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.h6">
+				<target>Überschrift 6</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.contenttype.option.html">
+				<target>Reiner HTML Code</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.layercontent.label">
+				<target>Ebeneninhalt</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.link.label">
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.basic.link.text">
+				<target>Link für diese Ebene. Beispiel: 'http://www.google.de'. Links werden nur im Frontend ausgegeben!</target>
+			</trans-unit>
+
+			<trans-unit id="partial.item.singleitem.tabs.style">
+				<target>Ebenen Stile</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.position">
+				<target>Position und Grösse</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.textsettings">
+				<target>Texteinstellungen</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.paddings">
+				<target>Innenabstände</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.border">
+				<target>Rahmen</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.misc">
+				<target>Sonstiges</target>
+			</trans-unit>
+
+			<trans-unit id="partial.item.singleitem.tabs.style.leftposition.label">
+				<target>Linke Position</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.leftposition.text">
+				<target>Die linke Position für diese Ebene, von der linken oberen Ecke aus gemessen. Wird der Slider responsive, wird dieser Wert entsprechend dem Faktor der Skalierung angepasst. Dein Slider hat eine Breite von %s Pixeln</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.topposition.label">
+				<target>Obere Position</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.topposition.text">
+				<target>Die obere Position für diese Ebene, von der linken oberen Ecke aus gemessen. Wird der Slider responsive, wird dieser Wert entsprechend dem Faktor der Skalierung angepasst. Dein Slider hat eine Breite von %s Pixeln</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.width.label">
+				<target>Ebenenbreite</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.width.text">
+				<target>Die Breite der Ebene. Wert wird in Pixeln gesetzt. Wird der Slider responsive, wird dieser Wert entsprechend dem Faktor der Skalierung angepasst. Dein Slider hat eine Breite von %s Pixeln</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.label">
+				<target>Textausrichtung</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.text">
+				<target>Wähle eine Option aus den vorhandenen aus. Standard ist "Links"</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.option.left">
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.option.right">
+				<target>Rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.option.center">
+				<target>Mittig</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.textalign.option.justify">
+				<target>Blocksatz</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.fontsize.label">
+				<target>Schriftgröße</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.fontsize.text">
+				<target>Schriftgröße in Pixeln. Wird der Slider in responsive skaliert, wird die Schriftgröße anhand dieses Basiswertes automatisch berechnet.</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.fontcolor.label">
+				<target>Schriftfarbe</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.fontcolor.text">
+				<target>Du kannst HEX Werte (#000000) oder RGB Werte (rgb(0,0,0)) oder RGBA Werte (rgba(0,0,0,.5)) verwenden</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.backgroundcolor.label">
+				<target>Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.backgroundcolor.text">
+				<target>Du kannst HEX Werte (#000000) oder RGB Werte (rgb(0,0,0)) oder RGBA Werte (rgba(0,0,0,.5)) verwenden</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingtop.label">
+				<target>Innenabstand oben</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingtop.text">
+				<target>Innenabstand in Pixeln. Beispiel: 10</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingright.label">
+				<target>Innenabstand rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingright.text">
+				<target>Innenabstand in Pixeln. Beispiel: 10</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingbottom.label">
+				<target>Innenabstand unten</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingbottom.text">
+				<target>Innenabstand in Pixeln. Beispiel: 10</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingleft.label">
+				<target>Innenabstand rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.paddingleft.text">
+				<target>Innenabstand in Pixeln. Beispiel: 10</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.bordertop.label">
+				<target>Randlinie oben</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.bordertop.text">
+				<target>Randlinie in Pixeln. Du kannst normales CSS benutzen. Beispiel: '1px solid #FFF'.</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderright.label">
+				<target>Randlinie rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderright.text">
+				<target>Randlinie in Pixeln. Du kannst normales CSS benutzen. Beispiel: '1px solid #FFF'.</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderbottom.label">
+				<target>Randlinie unten</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderbottom.text">
+				<target>Randlinie in Pixeln. Du kannst normales CSS benutzen. Beispiel: '1px solid #FFF'.</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderleft.label">
+				<target>Randlinie links</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.borderleft.text">
+				<target>Randlinie in Pixeln. Du kannst normales CSS benutzen. Beispiel: '1px solid #FFF'.</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.owncss.label">
+				<target>Eigene CSS Stile</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.owncss.text">
+				<target>Hier kannst Du eigene Inline-CSS Stile eintragen. Jede CSS Anweisung wird durch ein Semikolon getrennt. Beispiel: 'border-radius: 10px; -moz-border-radius: 10px;'</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.cssclass.label">
+				<target>Zusätzliche CSS Klassen</target>
+			</trans-unit>
+			<trans-unit id="partial.item.singleitem.tabs.style.cssclass.text">
+				<target>Wenn Du weitere CSS Klassen für dieses Element nutzen möchtest, kannst Du diese hier eintragen. Einzelne Klassen werden durch ein Leerzeichen getrennt.</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.singleitem.headerbuttons.edit">
+				<target>Slide bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.headerbuttons.delete">
+				<target>Slide löschen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.headerbuttons.copy">
+				<target>Diesen Slide kopieren. Slider zuerst speichern!</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.headerbuttons.copystop">
+				<target>Slide kopieren beenden</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.headerbuttons.sort">
+				<target>Slide sortieren. Slider anschliessend speichern!</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.headerbuttons.paste">
+				<target>Slide danach einfügen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic">
+				<target>Grundeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.slideimage">
+				<target>Slide Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers">
+				<target>Ebenen für diesen Slide</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.visibility.label">
+				<target>Sichtbarkeit</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.visibility.text">
+				<target>Slide ist versteckt</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.starttime.label">
+				<target>Startdatum und Startzeit</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.endtime.label">
+				<target>Enddatum und Endzeit</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.name.label">
+				<target>Name für diesen Slide</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.name.text">
+				<target>Der Name wird nur im TYPO3 Backend verwendet</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.delay.label">
+				<target>Slide Verzögerung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.delay.text">
+				<target>Gibt an, wie lange ein Slide sichbar ist, bevor der nächste Slide eingeblendet wird. Der Wert wird in Millisekunden eingetragen. Der Wert 1000 entspricht somit einer Sekunde. Bitte gib keine Werte mit 0 oder sehr kleine Werte ein.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transitions.label">
+				<target>Überblendeffekte</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.transitions.text">
+				<target>Wähle hier zwischen vielen 2D und 3D Effekten aus. Vergiss nicht, bei aktivierten Effekten die Checkbox zu setzen!</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.link.label">
+				<target>Link für diesen Slide</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.link.text">
+				<target>Du kannst den ganzen Slide verlinken. Gib entweder eine URL ein oder Starte de Link-Assistenten über das Icon rechts.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.cssclass.label">
+				<target>Eigene CSS Klasse</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.cssclass.text">
+				<target>Du kannst hier eine eigene CSS Klasse für diesen Slide angeben. Mehrere CSS Klassen werden durch ein Leerzeichen getrennt.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.deeplink.label">
+				<target>Slide-Link</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.basic.deeplink.text">
+				<target>Du kannst hier einen Alias für den Slide eingeben, um später damit per URL den Slide zu laden. Der eingegebene Wert hier wird in der URL mit einem # angehängt!</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.singleitem.tabs.image.title">
+				<target>Bild Titel</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.image.alternative">
+				<target>Bild alternativer Text</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.singleitem.tabs.layers.header">
+				<target>Ebenen verwalten</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.message">
+				<target><![CDATA[
+				<p><strong>Wichtig:</strong> Wenn Du Ebenen mit Deiner Maus auf dieser Bühne platzierst, sollte die Breite und Höhe in den Slider-Optionen exakt der Breite und der Höhe der Slide-Hintergrundbilder entsprechen. Für die besten Resultate wird der Slider dann "responsive" in den Optionen eingestellt, was Standardmäßig schon so konfiguriert ist. Wenn sich die Seite aufgrund von Monitorauflösungen dann skaliert (Desktop, Tablet und Smartphone) werden alle Ebenen automatisch mit den Koordinaten und der Größe mit skaliert.</p>
+				]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.positioningstage">
+				<target>Bühne zur Positionierung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.grid">
+				<target>Raster für Ebenenposition festlegen:</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.nogrid">
+				<target>Kein Raster</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.objectsnap">
+				<target>Objektfang festlegen:</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.movement">
+				<target>Schieben horizontal oder vertikal einschränken:</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.movement.none">
+				<target>keine:</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.movement.vertical">
+				<target>Nur vertikal:</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.movement.horizontal">
+				<target>Nur horizontal: </target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.layertimewarning.header">
+				<target>Achtung!</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.layertimewarning.text">
+				<target><![CDATA[Eine oder mehrere Ebenen in diesem Slide haben eine längere Zeit (einblenden, Dauer oder ausblenden) als die Dauer des Slides gesetzt. Das bedeutet, dass der Wechsel zum nächsten Slide durchgeführt wird, bevor alle Ebenen mit der Animation beendet sind.
+				Alle grünen Ebenen in der Zeitleiste sollten mit der Roten Leiste des Slides beendet werden.
+				<br /><br />
+				Wenn Du keine Einblende-, Dauer- oder Ausblendezeiten gesetzt hast, kannst Du diese Warnung ignorieren.]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.buttons.play">
+				<target>Abspielen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.buttons.pause">
+				<target>Pause</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.buttons.reverse">
+				<target>Rückwärts</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.buttons.resume">
+				<target>Weiter abspielen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.buttons.restart">
+				<target>Von Anfang an abspielen</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.slideline">
+				<target>Slide dauer (rot) | slide out (weiss)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.updatebutton">
+				<target>Bühne aktualisieren</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.timeline.showtools">
+				<target>Ebenen bearbeiten</target>
+			</trans-unit>
+
+
+
+
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions">
+				<target>Timings und Effekte</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.opening">
+				<target>Animation Start</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.middle">
+				<target>Animation Mitte oder Wiederholung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.ending">
+				<target>Animation Ende</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.hover">
+				<target>Animation bei Hover</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.parallax">
+				<target>Parallax Animation</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.transform">
+				<target>Ebenentransformation</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.miscellaneous">
+				<target>Sonstiges</target>
+			</trans-unit>
+
+
+
+
+
+
+
+
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in">
+				<target>Übergang ein</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.label">
+				<target>Horizontal</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.text">
+				<target>Wähle eine horizontale Richtung aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.option.left">
+				<target>Hereinfahren von links</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.option.right">
+				<target>Hereinfahren von rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.option.pixels">
+				<target>Mit Pixeln angeben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.bypixels.left.label">
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.horizontal.bypixels.left.text">
+				<target>Positive oder negative Anzahl von Pixeln (0 entspricht aktueller Position)</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.label">
+				<target>Vertikal</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.text">
+				<target>Wähle eine vertikale Richtung aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.option.top">
+				<target>Einfahren von oben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.option.bottom">
+				<target>Einfahren von unten</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.option.pixels">
+				<target>Mit Pixeln angeben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.bypixels.top.label">
+				<target>Oben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.vertical.bypixels.top.text">
+				<target>Positive oder negative Anzahl von Pixeln (0 entspricht aktueller Position)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.duration.label">
+				<target>Dauer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.duration.text">
+				<target>Dauer des Einblendeeffektes. Die Werte entsprechen Millisekunden. 1000 Millisekunden = 1 Sekunde. Kleinere Werte bedeuten schnellere Animation.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.easing.label">
+				<target>Animationskurve</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.easing.text">
+				<target>Animationskurve für den Einblendeeffekt</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.delay.label">
+				<target>Verzögerung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.delay.text">
+				<target>Verzögerung bevor die Animation startet. Die Werte entsprechen Millisekunden. 1000 Millisekunden = 1 Sekunde.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotate.label">
+				<target>Rotieren</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotate.text">
+				<target>Rotiert die Ebene im Uhrzeigersinn vom angegeben Wert auf 0 Grad. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotatex.label">
+				<target>Rotieren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotatex.text">
+				<target>Rotiert eine Ebene entlang der horizontalen (X) Achse vom angegebenen Wert auf 0 Grad. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotatey.label">
+				<target>Rotieren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.rotatey.text">
+				<target>Rotiert eine Ebene entlang der vertikalen (Y) Achse vom angegebenen Wert auf 0 Grad. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.scalex.label">
+				<target>Skalieren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.scalex.text">
+				<target>Skaliert die Breite der Ebene vom gegebenen Wert hin zu ihrer originalen Breite. Der Bereich wird als Wert zwischen 0 und 1 eingetragen. Abstufungen sind mit z.B. 0.25 möglich</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.scaley.label">
+				<target>Skalieren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.scaley.text">
+				<target>Skaliert die Höhe der Ebene vom gegebenen Wert hin zu ihrer originalen Höhe. Der Bereich wird als Wert zwischen 0 und 1 eingetragen. Abstufungen sind mit z.B. 0.25 möglich</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.skewx.label">
+				<target>Verzerren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.skewx.text">
+				<target>Verzerrt die Ebene an der horizontalen (X) Achse vom gegebenen Wert hin zu 0 Grad. Ein negativer Wert ergibt ein Start der Verzerrung in entgegengesetzter Richtung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.skewy.label">
+				<target>Verzerren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.skewy.text">
+				<target>Verzerrt die Ebene an der vertikalen (Y) Achse vom gegebenen Wert hin zu 0 Grad. Ein egativer Wert ergibt ein Start der Verzerrung in entgegengesetzter Richtung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.fade.label">
+				<target>Einblenden (fade)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.in.fade.text">
+				<target>Die Eebene mit Fade einblenden</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out">
+				<target>Übergang aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.label">
+				<target>Horizontal</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.text">
+				<target>Wähle eine horizontale Richtung aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.option.left">
+				<target>Herausfahren nach Links</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.option.right">
+				<target>Herausfahren nach Rechts</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.option.pixels">
+				<target>Mit Pixeln angeben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.bypixels.left.label">
+				<target>Links</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.horizontal.bypixels.left.text">
+				<target>Positive oder negative Anzahl von Pixeln (0 entspricht aktueller Position)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.label">
+				<target>Vertikal</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.text">
+				<target>SWähle eine vertikale Richtung aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.option.top">
+				<target>Herausfahren nach oben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.option.bottom">
+				<target>Herausfahren nach unten</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.option.pixels">
+				<target>Mit Pixeln angeben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.bypixels.top.label">
+				<target>Oben</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.vertical.bypixels.top.text">
+				<target>Positive oder negative Anzahl von Pixeln (0 entspricht aktueller Position)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.duration.label">
+				<target>Dauer</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.duration.text">
+				<target>Dauer des Ausblendeeffektes. Die Werte entsprechen Millisekunden. 1000 Millisekunden = 1 Sekunde. Kleinere Werte bedeuten schnellere Animation.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.easing.label">
+				<target>Animationskurve</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.easing.text">
+				<target>Animationskurve für den Ausblendeeffek</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotate.label">
+				<target>Rotieren</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotate.text">
+				<target>Rotiert die Ebene im Uhrzeigersinn von 0 Grad auf den angegeben Wert. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotatex.label">
+				<target>Rotieren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotatex.text">
+				<target>Rotiert eine Ebene entlang der horizontalen (X) Achse von 0 Grad auf den angegebenen Wert. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotatey.label">
+				<target>Rotieren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.rotatey.text">
+				<target>Rotiert eine Ebene entlang der vertikalen (Y) Achse von 0 Grad auf den angegebenen Wert. Negative Werte ergeben eine Rotation gegen den Uhrzeigersinn.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.scalex.label">
+				<target>Skalieren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.scalex.text">
+				<target>Skaliert die Breite der Ebene von ihrer originalen Breite hin zum angegebenen Wert. Der Bereich wird als Wert zwischen 0 und 1 eingetragen. Abstufungen sind mit z.B. 0.25 möglich</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.scaley.label">
+				<target>Skalieren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.scaley.text">
+				<target>Skaliert die Höhe der Ebene von ihrer originalen Höhe hin zum angegebenen Wert. Der Bereich wird als Wert zwischen 0 und 1 eingetragen. Abstufungen sind mit z.B. 0.25 möglich</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.skewx.label">
+				<target>Verzerren X</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.skewx.text">
+				<target>Verzerrt die Ebene an der horizontalen (X) Achse von o Grad hin zum angegebenen Wert. Ein negativer Wert ergibt ein Start der Verzerrung in entgegengesetzter Richtung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.skewy.label">
+				<target>Verzerren Y</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.skewy.text">
+				<target>Verzerrt die Ebene an der vertikalen (Y) Achse von o Grad hin zum angegebenen Wert. Ein negativer Wert ergibt ein Start der Verzerrung in entgegengesetzter Richtung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.fade.label">
+				<target>Ausblenden (Fade)</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.fade.text">
+				<target>Blendet die Ebene mit Fade aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.distance.label">
+				<target>Entfernung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.distance.text">
+				<target>Die Standardeinstellung ist -1, welche besagt, dass die Ebene exakt ausserhalb des Slides plaziert wird. Wird hier ein Höherer Wert von 2 oder 3 angegeben, wird die Ebene weiter aussen plaziert, was sich in den Animation in Form von Zeitpunkt des Erscheinens sowie auch der Geschwindigkeit auswirkt</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.showuntil.label">
+				<target>Zeige bis</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.showuntil.text">
+				<target>Die Ebene wird für die Zeit sichtbar sein, die hier angegeben wurde. Die Werte entsprechen Millisekunden. 1000 Millisekunden = 1 Sekunde.</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.parallax.label">
+				<target>Parallax Stufe</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.transitions.out.parallax.text">
+				<target>Du kannst für diese Ebene eine Parallax Stufe festlegen. Werte zwischen 1 und 10 sind möglich. He jöher dieser Wert, umso deutlicher ist der Parallax Effekt der Ebene bei Mausbewegung</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.button.new">
+				<target>Neu</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.singleitem.tabs.layers.alert.savefirst">
+				<target>Bitte füge diesem Slide zuerst ein Hintegrundbild hinzu. Speichere den Slider und komme anschließend hier hin zurück.</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slide.transitions.header">
+				<target>LayerSlider 2D &amp; 3D Übergangseffekte</target>
+			</trans-unit>
+			<trans-unit id="partial.slide.transitions.text">
+				<target>Hier siehst Du eine Auflistung aller vorhandenen 2D und 3D Übergangseffekte. Bewege Deine Maus über die Einträge, um den Effekt als Vorschau zu sehen. Du kannst einen oder mehrere Effekte auswählen. Bei mehreren ausgewählten Effekten wird der Übergang mit einem zufälligen Effekt aus den ausgewählten Effekten dargestellt.</target>
+			</trans-unit>
+
+
+
+
+
+
+
+			<trans-unit id="partial.slider.optionpanel.header">
+				<target>Slider Optionen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.general">
+				<target>Allgemeine Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.title.label">
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.title.text">
+				<target>Name des Sliders. Nach dem Speichern wirst Du automatisch zum bearbeiten weitergeleitet.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic">
+				<target>Layout</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile">
+				<target>Mobil</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow">
+				<target>Slideshow</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.appearance">
+				<target>Erscheinungsbild</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.video">
+				<target>Videos</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo">
+				<target>Logo</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default">
+				<target>Default Optionen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc">
+				<source>Sonstiges</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.help">
+				<target>Diese Optionen können im Slider gesetzt werden und sind für alle Slides und Ebenen gültig. Die Optionen können pro Slide oder Ebene mit eigenen Werten überschrieben werden.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.navigation">
+				<target>Navigation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.timingseffects">
+				<target>Zeiteinstellungen &amp; Effekte</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.responsive">
+				<target>Responsive</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.background">
+				<target>Hintergrund</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.width.label">
+				<target>width</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.width.text1">
+				<target>Breite des Sliders in Pixeln oder %. Standard: 1280px</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.width.text2">
+				<target>Die Breite des Sliders. Für die besten Resultate entspricht die Breite des Sliders exakt der Breite der Hintergundbilder der Slides. Zudem sollte die Option "Responsive" aktiviert sein.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.height.label">
+				<target>height</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.height.text1">
+				<target>Höhe des Sliders in Pixeln oder %. Standard: 720px</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.height.text2">
+				<target>Die Höhe des Sliders. Für die besten Resultate entspricht die Höhe des Sliders exakt der Höhe der Hintergundbilder der Slides. Zudem sollte die Option "Responsive" aktiviert sein.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.type.label">
+				<target>type</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.type.text1">
+				<target>'fixed', 'responsive', 'fullwidth', 'fullsize'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.type.text2">
+				<target><![CDATA[<p>Layout Modus für den Slider. Siehe fullSizeMode für weitergehende Einstellungen.</p>
+				<p><strong>Responsive</strong> Der Slider ist responsive und passt sich der Breite des Eltern-Elementes an.</p>
+				<p><strong>Fixed size</strong> Der Slider bleibt exakt in der eingestellten Größe</p>
+				<p><strong>Full width</strong> Full Screen Modus. Der Slider bricht aus dem Elternelement aus wenn Dein Layout ein Boxed Layout ist. Die Ebenen werden zentriert ohne sich zu vergrößern, leerer Raum rechts und links des Sliders wird mit dem Hintergrundbild gefüllt. Das herunterskalieren beginnt ab dem Wert "Breite" in der Standardeinstellung. Dieser Wert kann durch die Einstellung responsiveUnder beinflusst werden.</p>
+				<strong>Full size</strong>
+				<ul>
+				<li>Normal: Der Slider ist immer in der selben größe wie der Browser, auch beim verkleinern. Inhalte werden automatisch vergrößert/verkleinert.</li>
+				<li>Hero scene: Das gleiche wie normal, allerdings wird die Höhe beim scrollen verändert.</li>
+				<li>Fit to height: Stellt sich auf die Höhe des Elternelementes ein</li>
+				<ul>
+				]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsiveunder.label">
+				<target>responsiveUnder</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsiveunder.text1">
+				<target>Zahl in Pixel. Beispiel: 1170</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsiveunder.text2">
+				<target>Der Slider wird responsive, sobald das Fenster unter die eingegebene Breite kommt. Wird verwendet für Slider über die ganze Breite.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fullSizeMode.label">
+				<target>fullSizeMode</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fullSizeMode.text1">
+				<target>'normal', 'hero', 'fitheight'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fullSizeMode.text2">
+				<target>Setzt das verhalten der Größenapassung eines Full Size Sliders (z.B. Hero Szene)</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fitScreenWidth.label">
+				<target>fitScreenWidth</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fitScreenWidth.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.fitScreenWidth.text2">
+				<target>Wenn aktiviert, der Slider bekommt immer die Breite des Browsers, auch wenn ein Elternelement die Breit begrenzt.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.allowFullscreen.label">
+				<target>allowFullscreen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.allowFullscreen.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.allowFullscreen.text2">
+				<target>Besucher können den nativen Full-Screen Modus des Betriebssystems durch doppelklick starten</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.maxRatio.label">
+				<target>maxRatio</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.maxRatio.text1">
+				<target>Integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.maxRatio.text2">
+				<target>Der Slider wird Ebenen oberhalb dieses Levels nicht weiter vergößern. Beispiel: 1 hält die ebenen Auf Ihrer originalen Größe, auch wenn der Slider vergößert wird.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertMethod.label">
+				<target>insertMethod</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertMethod.text1">
+				<target>'prependTo', 'appendTo', 'insertBefore', 'insertAfter'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertMethod.text2">
+				<target>Methode wie der Slider im Quelltext platziert wird. Füür diese Option muss der insertSelector befüllt werden</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertSelector.label">
+				<target>insertSelector</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertSelector.text1">
+				<target>Selector, DOM Element</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.insertSelector.text2">
+				<target>Methode wie der Slider im Quelltext platziert wird. Füür diese Option muss der insertSelector befüllt werden. Beispiel: body oder #meindiv</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.clipSlideTransition.label">
+				<target>clipSlideTransition</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.clipSlideTransition.text1">
+				<target>'disabled', 'enabled', 'x', 'y'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.clipSlideTransition.text2">
+				<target>Choose on which axis (if any) you want to clip the overflowing content (i.e. that breaks outside of the slider bounds).</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.preventSliderClip.label">
+				<target>preventSliderClip</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.preventSliderClip.text1">
+				<target>true or false</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.preventSliderClip.text2">
+				<target>Ensures that the site template cannot clip parts of the slider when used in a boxed layout.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideOnMobile.label">
+				<target>hideOnMobile</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideOnMobile.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideOnMobile.text2">
+				<target>Versteckt den Slider auf mobilen Endgeräten, Tablets eingeschlossen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideUnder.label">
+				<target>hideUnder</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideUnder.text1">
+				<target>num</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.hideUnder.text2">
+				<target>Versteckt den Slider ab dieser Einstellung</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.label">
+				<target>slideOnSwipe</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.text2">
+				<target>Ignoriert ausgewählte Slide transformationen und benutzt Slide Effekte nur, wenn der Benutzer einen Slide mit der Swipe-Geste wechselt</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.label">
+				<target>optimizeForMobile</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.text2">
+				<target>Optimiert die Performance des Sliders für Mobilgeräte. Rechenintensive Effekte werden redurziert, die Darstellung der Effekte bleibt weitestgehend erhalten.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.firstSlide.label">
+				<target>firstSlide</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.firstSlide.text1">
+				<target>Integer </target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.firstSlide.text2">
+				<target>Nummer des Slides der zuerst gezeigt werden soll. Standard: 1. Du kannst auch das Wort "random" eintragen, dann startet der Slider mit einem zufälligen Slide</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autostart.label">
+				<target>autoStart</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autostart.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autostart.text2">
+				<target>Wenn der Wert 'on' gesetzt ist, startet der Slider automatisch, nachdem die Seite geladen wurde.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.startInViewport.label">
+				<source>startInViewport</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.startInViewport.text1">
+				<source>an oder aus</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.startInViewport.text2">
+				<source>Der Slider startet sobal er in den Viewport kommt</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.pauseonhover.label">
+				<target>Pause bei Mouseover</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.pauseonhover.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.pauseonhover.text2">
+				<target>Wenn die Option 'on' gesetzt ist, und die Maus über dem Slider ist, wird der Slider automatisch pausiert.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.pauseLayers.label">
+				<target>pauseLayers</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.pauseLayers.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.pauseLayers.text2">
+				<target>Ist diese Option aktiviert, werden Ebenen erst starten wenn die Slideshow pausiert.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.keybnav.label">
+				<target>Tastatur Navigation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.keybnav.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.keybnav.text2">
+				<target>Tastaturnavigation für den Slider nutzen. Der Besucher kann dann mittels den Pfeiltasten auf der Navigation zwischen den Slides wechseln.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.touchnav.label">
+				<target>Touch Navigation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.touchnav.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.touchnav.text2">
+				<target>Slides können auf Touch-Geräten mittels Gesten gewechselt werden</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScroll.label">
+				<target>playByScroll</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScroll.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScroll.text2">
+				<target>Spielt den Slider beim scrollen mit dem Mausrad ab</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.label">
+				<target>playByScrollSpeed</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.text1">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.text2">
+				<target>Setzt die Abspielgeschwindigkeit für die playByScroll Option. Z.B. 1</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.cycles.label">
+				<source>cycles</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.cycles.text1">
+				<source>integer</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.cycles.text2">
+				<source>Anzahl der Durchläufe des Sliders</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.forceCycles.label">
+				<source>forceCycles</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.forceCycles.text1">
+				<source>an oder aus</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.slideshow.forceCycles.text2">
+				<source>Der Slider stopp immer nach der Anzahl an durchläufen, egal ob der Slider neu gestartet wird.</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.twowayslideshow.label">
+				<target>twoWaySlideshow</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.twowayslideshow.text1">
+				<target>on oder off. Standard: off</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.twowayslideshow.text2">
+				<target>Wenn die Option 'on' aktiv ist, bewegt sich die Slideanimation rückwärts, wenn der "Zurück" im Slider geklickt wird</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.label">
+				<target>shuffleSlideshow</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.text2">
+				<target>Die Slides laufen in zufälliger Reihenfolge ab</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skin.label">
+				<target>skin</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skin.text1">
+				<target>name_des_skin Standard: glass</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skin.text2">
+				<target><![CDATA[Du kannst das aussehen des Sliders mit dem Skin verändern. Du kannst dabei entweder ein vorinstalliertes auswählen oder den Namen eines eigenen Skins eingeben. Wenn Du ein eigenes Skin eingibts, musst du in der nächsten Option den Pfad zum Skin (relativ) angeben.
+								<br />
+								<br />
+								<strong>Vorinstallierte Skins:</strong>
+				]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skinspath.label">
+				<target>Skin Pfad</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skinspath.text1">
+				<target>pfad/zum/skinsordner/. Default: internal</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.skinspath.text2">
+				<target>Du kannst hier einen Pfad zu einem eigenen Skinordner angeben. Beispiel: /fileadmin/templates/skins/</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.label">
+				<target>sliderFadeInDuration</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.text1">
+				<target>integer in Millisekunden</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.text2">
+				<target>Die Dauer des Einblendeeffektes wenn der Slider das erste mal geladen wird</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgcolor.label">
+				<target>Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgcolor.text1">
+				<target>CSS Hintergrundfarbe für die Slides. Standard: transparent</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgcolor.text2">
+				<target>Du kannst eine globale Hintergrundfarbe definieren, die dann für alle Slides gilt. Möglichkeiten sind HEX (#00000), RGB (rgb(0,0,0)) oder RGBA (rgba(0,0,0,0.5))</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgimage.label">
+				<target>Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgimage.text1">
+				<target>Adresse eine globalen Hintergrundbildes. Standard: false</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.globalbgimage.text2">
+				<target>Globales Hintergrundbild, welches in jedem Slide angezeigt wird. Hintergrundbilder von Slides überlagern dieses Bild.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.label">
+				<target>globalBGRepeat</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.text1">
+				<target>'no-repeat', 'repeat', 'repeat-x', 'repeat-y'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.text2">
+				<target>Wiederholung des globalen Hintergrundbild</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.label">
+				<target>globalBGAttachment</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.text1">
+				<target>'scroll', 'fixed'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.text2">
+				<targetrce>Wähle zwischem scrollbarem oder fixiertem Hintergrund</targetrce>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGPosition.label">
+				<target>globalBGPosition</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGPosition.text1">
+				<target>css Wert, z.B. '50% 50%'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGPosition.text2">
+				<target>Positionierung des globalen Hintegrundbild. Der erste Wert ist die horizontale Position und der zweite wert die vertikale.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGSize.label">
+				<target>globalBGSize</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGSize.text1">
+				<target>'auto', 'cover', 'contain' 'css Wert, z.B. 100%'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.apearance.globalBGSize.text2">
+				<target>Globale Hintergrundgröße des Sliders. Du kannst den Wert in Pixel, in Prozent oder als Konstante setzen. Konstanten: auto | cover | contain</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navprevnext.label">
+				<target>navPrevNext</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navprevnext.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navprevnext.text2">
+				<target>Wenn diese Option deaktiviert ist, erscheinen die beiden Pfeile am linken und rechten Rand nicht.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navstartstop.label">
+				<target>navStartStop</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navstartstop.text1">
+				<target>on oder off. Default: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navstartstop.text2">
+				<target>Wenn diese Option deaktiviert ist, erscheinen die Start/Stop Buttons im Slider nicht.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navbuttons.label">
+				<target>navButtons</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navbuttons.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.navbuttons.text2">
+				<target>Wenn diese Option deaktiviert ist, werden die Slide Buttons um unteren Teil des Sliders nicht angezeigt</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverprevnext.label">
+				<target>hoverPrevNext</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverprevnext.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverprevnext.text2">
+				<target>Wenn diese Option aktiviert ist, werden die Vor/Zurück Buttons an der Seite des Slider nur angezeigt, wenn sich die Maus über dem Slider befindet.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverbottomnav.label">
+				<target>hoverBottomNav</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverbottomnav.text1">
+				<target>on oder off. Standard: off</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.hoverbottomnav.text2">
+				<target>Wenn diese Option aktiv ist, werden die unteren Navigationselemente nur angezeigt, wenn sich die Maus über dem Slider befindet.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showbartimer.label">
+				<target>showBarTimer</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.forceloopnums.text1">
+				<target>on oder off. Standard: off</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.forceloopnums.text2">
+				<target>Über dem Slider wird ein kleiner Balken dargestellt, der von links nach rechts läuft und die Dauer des Slides anzeigt.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showcircletimer.label">
+				<target>showCircleTimer</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showcircletimer.text1">
+				<target>on oder off. Default: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showcircletimer.text2">
+				<target>Ein kleiner Kreis in der rechten oberen Ecke, der die Dauer des aktuellen Slides signalisiert.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.label">
+				<source>showSlideBarTimer</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.text1">
+				<source>an oder aus</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.text2">
+				<source>Zeige den slidebartimer um durch den Slider zu gehen wie gei einem Video.</source>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.label">
+				<target>thumbnailNavigation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.text1">
+				<target>'hover', 'always' oder 'disabled'. Standard: 'hover'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.text2">
+				<target>Vorschau Bilder werden werden immer (always) angezeigt, nur bei Mouseover (hover) oder sie sind dekativiert (disabled)</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tncontainerwidth.label">
+				<target>tnContainerWidth</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tncontainerwidth.text1">
+				<target>Gesamtbreite des Containers der Vorschaubilder. Standard: 60%</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tncontainerwidth.text2">
+				<target></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnwidth.label">
+				<target>tnWidth</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnwidth.text1">
+				<target>Breite in Pixel. Standard: 100</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnwidth.text2">
+				<target></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnheight.label">
+				<target>tnHeight</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnheight.text1">
+				<target>Höhe in Pixel. Standard: 60</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnheight.text2">
+				<target></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnactiveopacity.label">
+				<target>tnActiveOpacity</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnactiveopacity.text1">
+				<target>Zahl zwischen 0 und 100</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tnactiveopacity.text2">
+				<target>Definiert die Transparenz des aktiven Vorschaubildes</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tninactiveopacity.label">
+				<target>tnInactiveOpacity</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tninactiveopacity.text1">
+				<target>Zahl zwischen 1 und 100</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.tninactiveopacity.text2">
+				<target>Definiert die transparenz des inaktiven Vorschaubildes</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autoplayvideos.label">
+				<target>autoPlayVideos</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autoplayvideos.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autoplayvideos.text2">
+				<target>Wenn on, werden Videos automatisch gestartet, wenn Sie in einer Ebene verwendet werden. Du kannst diese Option mit der nächsten kombinieren.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autopause.label">
+				<target>autoPauseSlideshow</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autopause.text1">
+				<target>'auto', true oder false. Standard: 'auto'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.autopause.text2">
+				<target>'auto' bewirkt, dass der Slider solange pausiert, bis das Video in der Ebene abgespielt wurde. True bewirkt, dass der Slider pausiert während das Video abgespielt wird, und danach NICHT automatisch weiterläuft</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.youtubepreview.label">
+				<target>youtubePreview</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.youtubepreview.text1">
+				<target>Standard: maxresdefault.jpg</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.youtubepreview.text2">
+				<target>Das Standard Vorschaubild von YouTube Vides. Folgende Werte sind möglich 'maxresdefault.jpg', 'hqdefault.jpg', 'mqdefault.jpg' oder 'default.jpg'. Beachte dass 'maxresdefault.jpg' nicht bei allen Videos verfügbar ist.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogo.label">
+				<target>yourLogo</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogo.text1">
+				<target>Bild url</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogo.text2">
+				<target>Eine fixierte Bildebene die immer auf dem Slider sichtbar ist. Kann als Wasserzeichen oder Logo verwendet werden.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoStyle.label">
+				<target>yourLogoStyle</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoStyle.text1">
+				<target>CSS Eigenschaften, Standard: 'left: -10px; top: -10px;'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoStyle.text2">
+				<target>CSS Eigenschaften um die Platzierung und das Aussehen des Logos zu verändern</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoLink.label">
+				<target>yourLogoLink</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoLink.text1">
+				<target>url</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoLink.text2">
+				<target>Gib eine URL an um das Logo zu verlinken</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoTarget.label">
+				<target>yourLogoTarget</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoTarget.text1">
+				<target>'self', '_blank'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.logo.yourLogoTarget.text2">
+				<target>Choose whether you want to open the link in the current or on a new tab.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGSize.label">
+				<target>slideBGSize</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGSize.text1">
+				<target>'auto', 'cover', 'contain'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGSize.text2">
+				<target>Die Standard Hintergrundgröße. Dieser Wert wird als Standard für alle Slides gesetzt, bis Du in einem Slide einen anderen Wert einstellst.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGPosition.label">
+				<target>slideBGPosition</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGPosition.text1">
+				<target>css Wert z.B. '50% 50%'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.slideBGPosition.text2">
+				<target>Die Standard Hintergrundposition. Dieser Wert wird als Standard für alle Slides gesetzt, bis Du in einem Slide einen anderen Wert einstellst.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxSensitivity.label">
+				<target>parallaxSensitivity</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxSensitivity.text1">
+				<target>integer</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxSensitivity.text2">
+				<target>Erhöhe oder verringere die Empfindlichkeit des Parallax-Effektes bei Mausbewegungen oder beim bewegen eines mobilen Endgerätes</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.label">
+				<target>parallaxCenterLayers</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.text1">
+				<target>'center', 'top'</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.text2">
+				<target>Wähle ein Punkt für Parallax Inhalte and dem sich alle Ebenen ausrichten</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.label">
+				<target>parallaxCenterDegree</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.text1">
+				<target>num, Standard: 40</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.text2">
+				<target>Stelle eine bequeme Halteposition (in Grad) für mobile Geräte ein, die der Mittelpunkt für den Parallaxeffekt sein soll. Hält der Benutzer das Gerät in dieser Position, sind alle Ebenen mit Parallax 0 ausgerichtet.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.label">
+				<target>parallaxScrollReverse</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.text2">
+				<target>Parallax Ebenen schieben sich nach oben wenn die Seite nach unten gescrollt wird</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.label">
+				<target>forceLayersOutDuration</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.text1">
+				<target>num in ms, Standard: 750</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.text2">
+				<target>Die Animationsgeschwindigkeit in Millisekunden, wenn der Slider die letzten Ebenen ausbelndet um zum nächsten Slide zu wechseln</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.label">
+				<target>allowRestartOnResize</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.text2">
+				<target>Bestimmte Effekte können nicht in Echtzeit beim Größenwechsel des Browserfensters aktualisiert werden. Wenn diese Option aktiviert ist, erkennt der Slider eine Größenänderung oder den Wechsel der Orientierung eines Mobilen Gerätes und startet den aktuellen Slide neu.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.useSrcset.label">
+				<target>useSrcset</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.useSrcset.text1">
+				<target>an oder aus</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.misc.useSrcset.text2">
+				<target>Das srcset Attribut erlaubt das dynamische laden von skalierten Bildern basiert auf der Auflösung des Endgerätes.</target>
+			</trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.randomslideshow.label">
+				<target>Zufällige Slideshow</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.randomslideshow.text1">
+				<target>on oder off. Standard: off</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.randomslideshow.text2">
+				<target>Wenn die Option 'on' gesetzt ist, werden die Slides per Zufall eingeblendet. Bitte beachte, dass die Option "Schleife" nicht mit diesem Option zusammen funktioniert!</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.imagepreload.label">
+				<target>Bilder vorladen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.randomslideshow.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.randomslideshow.text2">
+				<target>Bilder des nächsten Slides werden automatisch vorgeladen.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.loops.label">
+				<target>Schleifen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.loops.text1">
+				<target>Zahl. Standard: 0</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.loops.text2">
+				<target>Anzahl der Wiederholungen. 0 bdeutet, der Slider wiederholt sich unendlich.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.forceloopnums.label">
+				<target>Anzahl wiederholungen erzwingen</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.forceloopnums.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.forceloopnums.text2">
+				<target>Wenn der Benutzer den Slider neu startet, wird der Slider nach dieser Anzahl wieder beendet.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedirectoin.label">
+				<target>Richtung des Slides</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedirectoin.text1">
+				<target>'left', 'right', 'top', 'bottom' oder 'fade' *. Standard: right</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedirectoin.text2">
+				<target><![CDATA[Richtung aus der der nächste Slide kommen soll. Kann individuell bei jedem Slide festgelegt werden.
+				]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedelay.label">
+				<target>Verzögerung des Slides</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedelay.text1">
+				<target>Zahl in Millisekunden. Standard: 4000</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.slidedelay.text2">
+				<target>Zeit, wann der nächste Slide erscheinen soll. Kann individuell pro Slide eingestellt werden.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationin.label">
+				<target>Dauer der Eingangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationin.text1">
+				<target>Zahl in Millisekunden. Standard: 1000</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationin.text2">
+				<target>Dauer der Eingangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationout.label">
+				<target>Dauer der Ausgangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationout.text1">
+				<target>Zahl in Millisekunden. Standard: 1000</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.durationout.text2">
+				<target>Dauer der Ausgangsanimation.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayin.label">
+				<target>Verzögerung der Eingangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayin.text1">
+				<target>Zahl in Millisekunden. Standard: 0</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayin.text2">
+				<target>Verzögerung der Eingangsanimation.</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayout.label">
+				<target>Verzögerung der Ausgangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayout.text1">
+				<target>Zahl in Millisekunden. Standard: 0</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.delayout.text2">
+				<target>Verzögerung der Ausgangsanimation</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingin.label">
+				<target>Animationskurve Einblendung</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingin.text1">
+				<target>Keyword der Animationskurve für Einblendeffekt. Standard: easeInOutQuint</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingin.text2">
+				<target><![CDATA[Du findest hier eine Übersicht über alle Animationskurven: <a href="http://easings.net/" target="_blank">Easings jQuery UI API</a></strong>]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingout.label">
+				<target>Animationskurve Ausblendeffekt</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingout.text1">
+				<target>Keyword der Animationskurve für Ausblendeffekt. Standard: easeInOutQuint</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.easingout.text2">
+				<target><![CDATA[Du findest hier eine Übersicht über alle Animationskurven: <a href="http://easings.net/" target="_blank">Easings jQuery UI API</a></strong>]]></target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsive.label">
+				<target>Responsive</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsive.text1">
+				<target>on oder off. Standard: on</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.optionpanel.tabs.basic.responsive.text2">
+				<target>Wenn diese Option gesetzt ist, passt sich der Slider automatisch der Breite an.</target>
+			</trans-unit>
+
+			<trans-unit id="partial.slider.previewpanel.header">
+				<target>Vorschau</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.previewpanel.text1">
+				<target>Das hier ist der Vorschaubereich des Sliders. Wenn alles gut läuft, sollte er im Frontend genau dargestellt werden!</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.previewpanel.previewwidth.text">
+				<target>Breite des Vorschaubereiches</target>
+			</trans-unit>
+			<trans-unit id="partial.slider.previewpanel.button.update">
+				<target>Breite setzen (Slider wird gespeichert)</target>
+			</trans-unit>
+
+
+			<trans-unit id="controller.item.linkfile.image.attached">
+				<target>Das Bild wurde mit der Ebene verknüpft und gespeichert</target>
+			</trans-unit>
+			<trans-unit id="controller.item.linkfile.image.notattached">
+				<target>Mit diesem Bild scheint es ein Problem zu geben. Bitte versuche ein anderes Bild.</target>
+			</trans-unit>
+			<trans-unit id="controller.slide.linkfile.image.attached">
+				<target>Das Bild wurde mit der Ebene verknüpft und gespeichert</target>
+			</trans-unit>
+			<trans-unit id="controller.slide.linkfile.image.notattached">
+				<target>Mit diesem Bild scheint es ein Problem zu geben. Bitte versuche ein anderes Bild.</target>
+			</trans-unit>
+			<trans-unit id="controller.slider.renderSliderView.notFound">
+				<target>Nanu?! Dieser Slider wurde nicht gefunden!</target>
+			</trans-unit>
+			<trans-unit id="controller.slider.create.created">
+				<target>Dein neuer Slider wurde gespeichert.</target>
+			</trans-unit>
+			<trans-unit id="controller.slider.delete.deleted">
+				<target>Der Slider wurde gelöscht.</target>
+			</trans-unit>
+
+			<trans-unit id="controller.slider.update.updated">
+				<target>Der Slider wurde aktualisiert und gespeichert.</target>
+			</trans-unit>
+
+			<trans-unit id="controller.success">
+				<target>Erfolgreich!</target>
+			</trans-unit>
+			<trans-unit id="controller.error">
+				<target>Fehler!</target>
+			</trans-unit>
+
+			<trans-unit id="navbar.toggle">
+				<target>Navigation umschalten</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.list">
+				<target>Übersicht</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.options">
+				<target>Optionen</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.save">
+				<target>Speichern</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.new">
+				<target>Neu</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.wizard">
+				<target>Assistent</target>
+			</trans-unit>
+			<trans-unit id="navbar.button.migration">
+				<target>JS Migrationshilfe</target>
+			</trans-unit>
+
+			<trans-unit id="modal.delete.title">
+				<target>Bitte bestätige</target>
+			</trans-unit>
+			<trans-unit id="modal.delete.body">
+				<target>Bist Du sicher, dass Du "%s" löschen möchtest? Das kann nicht rückgängig gemacht werden!</target>
+			</trans-unit>
+
+			<trans-unit id="modal.nodragable.title">
+				<target>Positionierung des Elements deaktiviert</target>
+			</trans-unit>
+			<trans-unit id="modal.nodragable.body">
+				<target>Bevor Du dieses Element platzieren kannst, musst Du in der Zeitleiste den Zeitwähler in den Grünen Bereich schieben. Nur in dieser Zeitposition kann das Element verschoben werden.</target>
+			</trans-unit>
+
+			<trans-unit id="modal.buttons.yes">
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="modal.buttons.no">
+				<target>Nein</target>
+			</trans-unit>
+			<trans-unit id="modal.buttons.ok">
+				<target>OK</target>
+			</trans-unit>
+			<trans-unit id="modal.buttons.close">
+				<target>Schliessen</target>
+			</trans-unit>
+			<trans-unit id="modal.buttons.save">
+				<target>Speichern</target>
+			</trans-unit>
+
+			<trans-unit id="button.addImages">
+				<target>Bild(er) auswählen</target>
+			</trans-unit>
+			<trans-unit id="general.yes">
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="general.no">
+				<target>Nein</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+
+<div style="max-height: 400px; overflow-x: scroll">
+    <f:for each="{rows}" as="row">
+        <div style="padding: 5px; border: 1px solid #CCCCCC; margin:  4px 0px;">
+            <label>
+                <input type="radio" name="{PA.itemFormElName}" {row.checked} value="tx_layerslider_domain_model_slider_{row.uid}" /> {row.title} <small style="font-weight:normal; font-size: 10px;">(Path: {row.fullPath})</small>
+            </label>
+
+            <div>
+                <f:for each="{row.slider.slides}" as="slide">
+                    <f:if condition="{slide.image}">
+                        <f:if condition="{slider.usefal}">
+                            <f:else>
+                                <f:image src="uploads/tx_layerslider/{slide.image}" alt="" title="" width="100" />
+                            </f:else>
+                        </f:if>
+                    </f:if>
+
+
+                    <f:if condition="{slide.falimage}">
+                        <f:image src="{slide.falimage.originalResource.originalFile.uid}" alt="" title="" width="100" />
+                    </f:if>
+                </f:for>
+
+            </div>
+        </div>
+    </f:for>
+</div>

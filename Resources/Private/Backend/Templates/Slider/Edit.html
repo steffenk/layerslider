@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+
+	<f:section name="content">
+
+
+		<f:render partial="Navbar" arguments="{editmode: 1}"/>
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+
+			<f:form action="update" id="sliderform" name="slider" object="{slider}" >
+
+
+				<f:render partial="FormErrors" />
+
+				<f:flashMessages />
+				<!-- SHOW SLIDER OPTION PANEL -->
+
+				<!-- Modal -->
+
+				<f:render partial="Slider/Optionpanel.html" arguments="{slider:slider}"/>
+
+
+				<!-- SHOW SLIDER OPTION PANEL -->
+
+
+				<!-- SHOW SLIDER PREVIEW PANEL -->
+
+				<f:render partial="Slider/Previewpanel.html" arguments="{slider:slider, options:options}"/>
+
+				<!-- SHOW SLIDER PREVIEW PANEL -->
+
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4><i class="fa fa-eye"></i> <f:translate key="slider.edit.header.manage" /></h4>
+					</div>
+					<div class="panel-body">
+
+						<div class="layerslider-item-slides-area">
+							<div class="sortable">
+									<f:if condition="{slider.slides}">
+										<f:then>
+											<f:for each="{slider.slides}" as="slide" iteration="i">
+
+													<!-- SHOW SLIDER SLIDE SINGLE ITEM -->
+													<f:render partial="Slide/Singleitem.html" arguments="{slide:slide, slider:slider, fileWizardUrl:fileWizardUrl, linkWizardUrl:linkWizardUrl, slidelist:slidelist}" />
+													<!-- SHOW SLIDER SLIDE SINGLE ITEM -->
+
+											</f:for>
+										</f:then>
+										<f:else>
+											<div class="layerslider-item lsclearfix" style="border:none; text-align: right; color: #000;background:none;">
+												<f:link.action action="paste" controller="Slide" title="Paste slide after" class="btn btn-circle pasteSlide" style="display: none; " arguments="{slider: slider}" additionalAttributes="{onclick:'pasteSlide(this); return false;'}"><i class="fa fa-clipboard" style="color: #000;"></i></f:link.action>
+											</div>
+
+										</f:else>
+									</f:if>
+								</div>
+
+								<script>
+									$( ".sortable" ).sortable({handle: ".sort-handle"});
+								</script>
+								<script>
+
+									function setFormValueFromBrowseWin(element,uid,filename){
+
+										var slideUrl = "{f:uri.action(action:'linkFile', controller:'Slide')}";
+										var itemUrl = "{f:uri.action(action:'linkFile', controller:'Item')}";
+										var params = element.split('_');
+										if(params[0] == 'slide'){
+											var url = slideUrl;
+											var url = url+"&tx_layerslider_web_layersliderm1[file]="+uid+"&tx_layerslider_web_layersliderm1[slide]="+params[1];
+											$.ajax({
+												type: "GET",
+												url: url.replace(/&amp;/g, '&')
+											}).done(function( data ) {
+												var slideUid = params[1];
+												$('div[data-slideimage="'+slideUid+'"]').replaceWith(data);
+												});
+										}
+
+										if(params[0] == 'item'){
+											var url = itemUrl;
+											var url = url+"&tx_layerslider_web_layersliderm1[file]="+uid+"&tx_layerslider_web_layersliderm1[item]="+params[1];
+											$.ajax({
+												type: "GET",
+												url: url.replace(/&amp;/g, '&')
+											}).done(function( data ) {
+												var itemUid = params[1];
+												$('tr[data-itemimage="'+itemUid+'"]').replaceWith(data);
+											});
+										}
+									}
+								</script>
+								<div class="text-right">
+									<f:form.button name="newSlide" class="btn btn-success" value="{slider.uid}"><i class="fa fa-plus-circle"></i> <f:translate key="slider.edit.button.newslide" /></f:form.button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="notDragable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel"><f:translate key="modal.nodragable.title" /></h4>
+							</div>
+							<div class="modal-body">
+								<p><f:translate key="modal.nodragable.body" /></p>
+								<div style="text-align: center">
+									<f:image src="EXT:layerslider/Resources/Public/Img/drag-hint.png"  />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<a class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.ok" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- SHOW OPTION TRANSITION PANEL ITEM -->
+
+				<f:render partial="Slide/Transitions" />
+
+				<!-- SHOW OPTION TRANSITION PANEL ITEM -->
+
+			</f:form>
+
+
+
+
+
+
+		</div>
+
+
+	</f:section>
+</body>
+</html>

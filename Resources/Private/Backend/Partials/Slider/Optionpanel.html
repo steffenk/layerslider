@@ -1,0 +1,798 @@
+<div class="modal fade" id="optionPanel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"><f:translate key="partial.slider.optionpanel.header" /></h4>
+			</div>
+			<div class="modal-body container-fluid">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4><i class="fa fa-gear"></i> <f:translate key="partial.slider.optionpanel.general" /></h4>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="form-group">
+									<label for="title"><f:translate key="partial.slider.optionpanel.title.label" /></label>
+									<f:form.textfield class="form-control" property="title" id="title"/>
+									<p class="help-block"><f:translate key="partial.slider.optionpanel.title.text" /></p>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+												<f:translate key="partial.slider.optionpanel.tabs.basic" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											<table class="table table-bordered">
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.width.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><f:form.textfield id="width" class="form-control" property="options.width" /></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.width.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.width.text2" /></p></td>
+												</tr>
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.height.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="width" class="form-control" property="options.height" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.height.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.height.text2" /></p></td>
+												</tr>
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.type.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="type" class="form-control" property="options.type" options="{responsive: 'responsive', fixed:'fixed', fullwidth:'fullwidth', fullsize: 'fullsize'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.type.text1" /></p></td>
+													<td class="help-block"><f:format.raw><f:translate htmlEscape="true" key="partial.slider.optionpanel.tabs.basic.type.text2" /></f:format.raw></td>
+												</tr>
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.responsiveunder.label" /></th>
+												</tr>
+												<tr>
+													<td>
+														<div class="input-group">
+															<f:form.textfield id="responsiveUnder" class="form-control" property="options.responsiveUnder" />
+															<span class="input-group-addon">px</span>
+														</div>
+													</td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.responsiveunder.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.responsiveunder.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.fullSizeMode.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="fullSizeMode" class="form-control" property="options.fullSizeMode" options="{normal: 'normal', hero:'hero', fitheight:'fitheight'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.fullSizeMode.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.fullSizeMode.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.fitScreenWidth.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][fitScreenWidth]" class="form-control" id="fitScreenWidth" value="1" {f:if(condition:'{slider.options.fitScreenWidth}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.fitScreenWidth.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.fitScreenWidth.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.allowFullscreen.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][allowFullscreen]" class="form-control" id="allowFullscreen" value="1" {f:if(condition:'{slider.options.allowFullscreen}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.allowFullscreen.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.allowFullscreen.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.maxRatio.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="maxRatio" class="form-control" property="options.maxRatio" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.maxRatio.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.maxRatio.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.insertMethod.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="insertMethod" class="form-control" property="options.insertMethod" options="{prependTo: 'prependTo', appendTo:'appendTo', insertBefore:'insertBefore', insertAfter:'insertAfter'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.insertMethod.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.insertMethod.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.insertSelector.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="insertSelector" class="form-control" property="options.insertSelector" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.insertSelector.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.insertSelector.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.clipSlideTransition.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="clipSlideTransition" class="form-control" property="options.clipSlideTransition" options="{disabled: 'disabled', enabled:'enabled', x:'x', y:'y'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.clipSlideTransition.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.clipSlideTransition.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.preventSliderClip.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][preventSliderClip]" class="form-control" id="preventSliderClip" value="true" {f:if(condition:'{slider.options.preventSliderClip}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.preventSliderClip.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.preventSliderClip.text2" /></p></td>
+												</tr>
+											</table>
+
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingMobile">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMobile" aria-expanded="false" aria-controls="collapseMobile">
+												<f:translate key="partial.slider.optionpanel.tabs.mobile" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseMobile" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMobile">
+										<div class="panel-body">
+											<table class="table table-bordered">
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.mobile.hideOnMobile.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][hideOnMobile]" class="form-control" id="hideOnMobile" value="1" {f:if(condition:'{slider.options.hideOnMobile}==1', then:'checked')}/></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.hideOnMobile.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.hideOnMobile.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.mobile.hideUnder.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="hideUnder" class="form-control" property="options.hideUnder" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.hideUnder.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.hideUnder.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][slideOnSwipe]" class="form-control" id="slideOnSwipe" value="1" {f:if(condition:'{slider.options.slideOnSwipe}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.slideOnSwipe.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][optimizeForMobile]" class="form-control" id="optimizeForMobile" value="true" {f:if(condition:'{slider.options.optimizeForMobile}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.mobile.optimizeForMobile.text2" /></p></td>
+												</tr>
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingSlideshow">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSlideshow" aria-expanded="false" aria-controls="collapseSlideshow">
+												<f:translate key="partial.slider.optionpanel.tabs.slideshow" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseSlideshow" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSlideshow">
+										<div class="panel-body">
+											<table class="table table-bordered">
+												<tr class="info">
+													<th colspan="3" class="">Slideshow behavior</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.firstSlide.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><f:form.textfield id="width" class="form-control" property="options.firstSlide" /></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.firstSlide.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.firstSlide.text2" /></p></td>
+												</tr>
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.autostart.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" data-element="transitionin" name="tx_layerslider_web_layersliderm1[slider][options][autoStart]" class="form-control" id="autoStart" value="1" {f:if(condition:'{slider.options.autoStart}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autostart.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autostart.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.startInViewport.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][startInViewport]" class="form-control" id="startInViewport" value="true" {f:if(condition:'{slider.options.startInViewport}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.startInViewport.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.startInViewport.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.pauseonhover.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][pauseOnHover]" class="form-control" id="pauseOnHover" value="1" {f:if(condition:'{slider.options.pauseOnHover}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.pauseonhover.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.pauseonhover.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.pauseLayers.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][pauseLayers]" class="form-control" id="pauseLayers" value="true" {f:if(condition:'{slider.options.pauseLayers}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.pauseLayers.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.pauseLayers.text2" /></p></td>
+												</tr>
+												<tr class="info">
+													<th colspan="3" class="">Slideshow navigation</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.keybnav.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][keybNav]" class="form-control" id="keybNav" value="1" {f:if(condition:'{slider.options.keybNav}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.keybnav.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.keybnav.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.touchnav.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][touchNav]" class="form-control" id="touchNav" value="1" {f:if(condition:'{slider.options.touchNav}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.touchnav.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.touchnav.text2" /></p></td>
+												</tr>
+												<tr class="info">
+													<th colspan="3" class="">Play by scroll</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScroll.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][playByScroll]" class="form-control" id="playByScroll" value="true" {f:if(condition:'{slider.options.playByScroll}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScroll.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScroll.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="playByScrollSpeed" class="form-control" property="options.playByScrollSpeed" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.playByScrollSpeed.text2" /></p></td>
+												</tr>
+												<tr class="info">
+													<th colspan="3" class="">Cycles</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.cycles.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="cycles" class="form-control" property="options.cycles" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.cycles.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.cycles.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.slideshow.forceCycles.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][forceCycles]" class="form-control" id="forceCycles" value="1" {f:if(condition:'{slider.options.forceCycles}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.forceCycles.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.slideshow.forceCycles.text2" /></p></td>
+												</tr>
+												<tr class="info">
+													<th colspan="3" class="">Other settings</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.twowayslideshow.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][twoWaySlideshow]" class="form-control" id="twoWaySlideshow" value="1" {f:if(condition:'{slider.options.twoWaySlideshow}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.twowayslideshow.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.twowayslideshow.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][shuffleSlideshow]" class="form-control" id="shuffleSlideshow" value="true" {f:if(condition:'{slider.options.shuffleSlideshow}', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.shuffleSlideshow.text2" /></p></td>
+												</tr>
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingAppearance">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAppearance" aria-expanded="false" aria-controls="collapseAppearance">
+												<f:translate key="partial.slider.optionpanel.tabs.appearance" /></a>
+											</a>
+										</h2>
+									</div>
+									<div id="collapseAppearance" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAppearance">
+										<div class="panel-body">
+											<table class="table table-bordered">
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.skin.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><f:form.textfield id="skin" class="form-control" property="options.skin" /></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.skin.text1" /></p></td>
+													<td><p class="help-block">
+														<f:format.raw><f:translate key="partial.slider.optionpanel.tabs.basic.skin.text2" /></f:format.raw>
+														<ul>
+															<li>borderlessdark</li>
+															<li>borderlessdark3d</li>
+															<li>borderlesslight</li>
+															<li>borderlesslight3d</li>
+															<li>carousel</li>
+															<li>darkskin</li>
+															<li>defaultskin</li>
+															<li>fullwidth</li>
+															<li>fullwidthdark</li>
+															<li>glass</li>
+															<li>lightskin</li>
+															<li>minimal</li>
+															<li>noskin</li>
+															<li>v5</li>
+															<li>v6</li>
+														</ul>
+														</p>
+													</td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class="">skinsPath</th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="youtubePreview" class="form-control" property="options.skinsPath" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.skinspath.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.skinspath.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.label" /></th>
+												</tr>
+												<tr>
+													<td>
+														<div class="input-group">
+															<f:form.textfield id="sliderFadeInDuration" class="form-control" property="options.sliderFadeInDuration" />
+															<span class="input-group-addon">ms</span>
+														</div>
+													</td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.sliderFadeInDuration.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgcolor.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="globalBGColor" class="form-control" property="options.globalBGColor" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgcolor.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgcolor.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgimage.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="globalBGImage" class="form-control" property="options.globalBGImage" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgimage.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.globalbgimage.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="globalBGRepeat" class="form-control" property="options.globalBGRepeat" options="{no-repeat: 'no-repeat', repeat:'repeat', repeat-x:'repeat-x', repeat-y:'repeat-y'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGRepeat.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="globalBGAttachment" class="form-control" property="options.globalBGAttachment" options="{scroll: 'scroll', fixed:'fixed'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGAttachment.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGPosition.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="globalBGPosition" class="form-control" property="options.globalBGPosition" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGPosition.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGPosition.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGSize.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="globalBGPosition" class="form-control" property="options.globalBGSize" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGSize.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.apearance.globalBGSize.text2" /></p></td>
+												</tr>
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingNavigation">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNavigation" aria-expanded="false" aria-controls="collapseNavigation">
+												<f:translate key="partial.slider.optionpanel.tabs.navigation" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseNavigation" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNavigation">
+										<div class="panel-body">
+											<table class="table table-bordered">
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.navprevnext.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][navPrevNext]" class="form-control" id="navPrevNext" value="1" {f:if(condition:'{slider.options.navPrevNext}==1', then:'checked')}/></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navprevnext.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navprevnext.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.navstartstop.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][navStartStop]" class="form-control" id="navStartStop" value="1" {f:if(condition:'{slider.options.navStartStop}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navstartstop.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navstartstop.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.navbuttons.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][navButtons]" class="form-control" id="navButtons" value="1" {f:if(condition:'{slider.options.navButtons}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navbuttons.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.navbuttons.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.hoverprevnext.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][hoverPrevNext]" class="form-control" id="hoverPrevNext" value="1" {f:if(condition:'{slider.options.hoverPrevNext}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.hoverprevnext.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.hoverprevnext.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.hoverbottomnav.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][hoverBottomNav]" class="form-control" id="hoverBottomNav" value="1" {f:if(condition:'{slider.options.hoverBottomNav}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.hoverbottomnav.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.hoverbottomnav.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.showbartimer.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][showBarTimer]" class="form-control" id="showBarTimer" value="1" {f:if(condition:'{slider.options.showBarTimer}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showbartimer.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showbartimer.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.showcircletimer.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][showCircleTimer]" class="form-control" id="showCircleTimer" value="1" {f:if(condition:'{slider.options.showCircleTimer}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showcircletimer.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showcircletimer.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][showSlideBarTimer]" class="form-control" id="showSlideBarTimer" value="1" {f:if(condition:'{slider.options.showSlideBarTimer}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.showSlideBarTimer.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class="info">Thumbnail Navigation</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="thumbnailNavigation" class="form-control" property="options.thumbnailNavigation" prependOptionLabel="" prependOptionValue="" options="{hover:'hover', disabled:'disabled', always:'always'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.thumbnailnavigation.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.tncontainerwidth.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="tnWidth" class="form-control" property="options.tnContainerWidth" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tncontainerwidth.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tncontainerwidth.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.tnwidth.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="tnWidth" class="form-control" property="options.tnWidth" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnwidth.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnwidth.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.tnheight.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="tnWidth" class="form-control" property="options.tnHeight" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnheight.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnheight.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.tnactiveopacity.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="tnWidth" class="form-control" property="options.tnActiveOpacity" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnactiveopacity.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tnactiveopacity.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.tninactiveopacity.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="tnWidth" class="form-control" property="options.tnInactiveOpacity" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tninactiveopacity.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.tninactiveopacity.text2" /></p></td>
+												</tr>
+
+
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingVideo">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseVideo" aria-expanded="false" aria-controls="collapseVideo">
+												<f:translate key="partial.slider.optionpanel.tabs.video" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseVideo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingVideo">
+										<div class="panel-body">
+											<table class="table table-bordered">
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.autoplayvideos.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][autoPlayVideos]" class="form-control" id="autoPlayVideos" value="1" {f:if(condition:'{slider.options.autoPlayVideos}==1', then:'checked')}/></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autoplayvideos.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autoplayvideos.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.autopause.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="autoPauseSlideshow" class="form-control" property="options.autoPauseSlideshow" options="{auto:'auto', true:'on', false:'of'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autopause.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.autopause.text1" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.basic.youtubepreview.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="youtubePreview" class="form-control" property="options.youtubePreview" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.youtubepreview.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.basic.youtubepreview.text2" /></p></td>
+												</tr>
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingLogo">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseLogo" aria-expanded="false" aria-controls="collapseLogo">
+												<f:translate key="partial.slider.optionpanel.tabs.logo" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseLogo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLogo">
+										<div class="panel-body">
+											<table class="table table-bordered">
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogo.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="yourLogo" class="form-control" property="options.yourLogo" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogo.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogo.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoStyle.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="yourLogoStyle" class="form-control" property="options.yourLogoStyle" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoStyle.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoStyle.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoLink.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="yourLogoLink" class="form-control" property="options.yourLogoLink" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoLink.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoLink.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoTarget.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="yourLogoTarget" class="form-control" property="options.yourLogoTarget" options="{self:'self', _blank:'_blank'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoTarget.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.logo.yourLogoTarget.text2" /></p></td>
+												</tr>
+
+
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-danger">
+									<div class="panel-heading" role="tab" id="headingDefault">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseDefault" aria-expanded="false" aria-controls="collapseDefault">
+												<f:translate key="partial.slider.optionpanel.tabs.default" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseDefault" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDefault">
+										<div class="panel-body">
+											<p class="lead-text"><f:translate key="partial.slider.optionpanel.tabs.default.help" /></p>
+											<table class="table table-bordered">
+
+												<tr class="info">
+													<th colspan="3" class="">Slide Background defaults</th>
+												</tr>
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.slideBGSize.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><f:form.select id="slideBGSize" class="form-control" property="options.slideBGSize" options="{auto:'auto', cover:'cover', contain:'contain'}"  /></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.slideBGSize.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.slideBGSize.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.slideBGPosition.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="slideBGPosition" class="form-control" property="options.slideBGPosition" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.slideBGPosition.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.slideBGPosition.text2" /></p></td>
+												</tr>
+
+												<tr class="info">
+													<th colspan="3" class="">Parallax defaults</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.parallaxSensitivity.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="parallaxSensitivity" class="form-control" property="options.parallaxSensitivity" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxSensitivity.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxSensitivity.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.select id="parallaxCenterLayers" class="form-control" property="options.parallaxCenterLayers" options="{center:'center', top:'top'}"  /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterLayers.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="parallaxCenterDegree" class="form-control" property="options.parallaxCenterDegree" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxCenterDegree.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.label" /></th>
+												</tr>
+												<tr>
+													<td><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][parallaxScrollReverse]" class="form-control" id="parallaxScrollReverse" value="1" {f:if(condition:'{slider.options.parallaxScrollReverse}==1', then:'checked')}/></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.parallaxScrollReverse.text2" /></p></td>
+												</tr>
+												<tr class="info">
+													<th colspan="3" class="">Misc</th>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.label" /></th>
+												</tr>
+												<tr>
+													<td><f:form.textfield id="forceLayersOutDuration" class="form-control" property="options.forceLayersOutDuration" /></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.default.forceLayersOutDuration.text2" /></p></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading" role="tab" id="headingMisc">
+										<h2 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMisc" aria-expanded="false" aria-controls="collapseMisc">
+												<f:translate key="partial.slider.optionpanel.tabs.misc" />
+											</a>
+										</h2>
+									</div>
+									<div id="collapseMisc" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMisc">
+										<div class="panel-body">
+											<table class="table table-bordered">
+
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][allowRestartOnResize]" class="form-control" id="allowRestartOnResize" value="1" {f:if(condition:'{slider.options.allowRestartOnResize}==1', then:'checked')}/></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.misc.allowRestartOnResize.text2" /></p></td>
+												</tr>
+												<tr class="active">
+													<th colspan="3" class=""><f:translate key="partial.slider.optionpanel.tabs.misc.useSrcset.label" /></th>
+												</tr>
+												<tr>
+													<td width="150"><input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][options][useSrcset]" class="form-control" id="useSrcset" value="1" {f:if(condition:'{slider.options.useSrcset}==1', then:'checked')}/></td>
+													<td width="250"><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.misc.useSrcset.text1" /></p></td>
+													<td><p class="help-block"><f:translate key="partial.slider.optionpanel.tabs.misc.useSrcset.text2" /></p></td>
+												</tr>
+
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" type="button" class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.close" /></a>
+				<input type="submit" class="btn btn-primary" value="{f:translate(key:'modal.buttons.save')}" />
+			</div>
+		</div>
+	</div>
+</div>

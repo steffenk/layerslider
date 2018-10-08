@@ -1,0 +1,45 @@
+plugin.tx_layerslider {
+	view {
+		# cat=plugin.tx_layerslider/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:layerslider/Resources/Private/Templates/
+		# cat=plugin.tx_layerslider/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:layerslider/Resources/Private/Partials/
+		# cat=plugin.tx_layerslider/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:layerslider/Resources/Private/Layouts/
+	}
+	persistence {
+		// use 0 for non multiple web page setup.
+		// The slides would be saved in page root.
+		// if you use multiple pages in one typo3 and need the difference of the sliders
+		// set this to one. Insert in each page in the root template in the constants a line like this (without slashes!)
+		// plugin.tx_layerslider.persistence.storagePid = PID_OF_STARTPAGE
+		storagePid = 0
+	}
+
+	settings {
+		# cat=plugin.tx_layerslider/basic/1; type=boolean; label=Include jQuery in Header
+	    includeJquery = 0
+		# cat=plugin.tx_layerslider/basic/2; type=boolean; label=Include jQuery in Footer
+	    includeJqueryFooter = 1
+        # cat=plugin.tx_layerslider/basic/3; type=boolean; label=Include additional css file in backend (preview, positioning stage)
+        useAdditionalBackendCSS.useInBE = 1
+        # cat=plugin.tx_layerslider/basic/4; type=boolean; label=Include additional css file in frontend (preview, positioning stage)
+        useAdditionalBackendCSS.useInFE = 1
+        # cat=plugin.tx_layerslider/basic/5; type=string; label=Path to the alternative css file (full from document root with starting /. Example: /typo3conf/ext/layerslider/Resources/Public/css/additionalStyles.css)
+        useAdditionalBackendCSS.path = /typo3conf/ext/layerslider/Resources/Public/css/additionalStyles.css
+		# cat=plugin.tx_layerslider/basic/6; type=string; label=Path to the skins. Like /fileadmin/mySkins/ or /typo3conf/ext/layerslider/Resources/Public/skins/ (default)
+		skinsPath = /typo3conf/ext/layerslider/Resources/Public/skins/
+
+	}
+}
+
+module.tx_layerslider {
+	view {
+		# cat=module.tx_layerslider/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:layerslider/Resources/Private/Backend/Templates/
+		# cat=module.tx_layerslider/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:layerslider/Resources/Private/Backend/Partials/
+		# cat=module.tx_layerslider/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:layerslider/Resources/Private/Backend/Layouts/
+	}
+}

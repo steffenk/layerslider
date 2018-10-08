@@ -1,0 +1,178 @@
+<f:layout name="Default" />
+<f:section name="content">
+
+
+
+    <f:render partial="Navbar" arguments="{index: 1}"/>
+
+    <div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+        <f:flashMessages />
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><f:translate key="slider.list.header" /></h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="layerslider-list">
+            <f:if condition="{sliders}">
+                <f:then>
+                    <f:for each="{sliders}" as="slider" iteration="i">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <span title="{slider.uid}">{slider.title}</span>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="text-right">
+                                            <f:if condition="{slider.version} == 6">
+                                                <div class="btn-group">
+                                                    <f:link.action action="edit" arguments="{slider : slider}" title="{f:translate(key:'slider.list.buttons.edit')}" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></f:link.action>
+                                                    <f:if condition="{slider.usefal}">
+                                                        <f:link.action action="copy" arguments="{slider : slider}" title="{f:translate(key:'slider.list.buttons.copy')}" class="btn btn-primary btn-circle"><i class="fa fa-fw fa-files-o"></i></f:link.action>
+                                                    </f:if>
+                                                </div>
+                                            </f:if>
+                                            <a data-toggle="modal" data-target="#delete-slider-{slider.uid}" title="{f:translate(key:'slider.list.buttons.delete')}" class="btn btn-primary btn-circle"><i class="fa fa-fw fa-trash-o"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="panel-body">
+                                <f:for each="{slider.slides}" as="slide">
+                                    <f:if condition="{slide.image}">
+                                        <f:if condition="{slider.usefal}">
+                                            <f:else>
+                                                <f:image src="uploads/tx_layerslider/{slide.image}" alt="" title="" width="100" />
+                                            </f:else>
+                                        </f:if>
+                                    </f:if>
+
+
+                                    <f:if condition="{slide.falimage}">
+                                        <f:image src="{slide.falimage.originalResource.originalFile.uid}" alt="" title="" width="100" />
+                                    </f:if>
+                                </f:for>
+                                <f:if condition="{slider.version} < 6">
+                                    <div class="alert alert-danger">
+                                        <f:link.action action="updatev6" arguments="{slider:slider}"><f:translate key="slider.list.v6warning" /></f:link.action>
+                                    </div>
+                                </f:if>
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="delete-slider-{slider.uid}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel"><f:translate key="modal.delete.title" /></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <f:translate key="modal.delete.body" arguments="{0:slider.title}" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.no" /></a>
+                                        <f:link.action action="delete" arguments="{slider : slider}" title="Delete this slider" class="btn btn-danger"><i class="fa fa-trash-o"></i> <f:translate key="modal.buttons.yes" /></f:link.action>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <p>
+                        <f:translate key="slider.list.noslider.text" /><br /><br />
+
+                        <f:link.action class="btn btn-primary" action="new" controller="Slider" ><i class="fa fa-plus-circle"></i> <f:translate key="slider.list.noslider.button.byhand" /></f:link.action>&nbsp;
+                        <f:link.action class="btn btn-info" action="index" controller="Wizard" ><i class="fa fa-magic"></i> <f:translate key="slider.list.noslider.button.wizard" /></f:link.action>
+                    </p>
+                </f:else>
+            </f:if>
+        </div>
+
+
+        <hr />
+        <div class="row lsnews">
+            <div class="col-lg-12">
+                <h3 class="page-header">Layerslider News</h3>
+
+                <div class="row">
+
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="min-height: 52px;">
+
+                            </div>
+                            <div class="panel-body news-panel-body" style="height: 350px; overflow-x: scroll; color: #999; background: #F5F5F5">
+                                <div id="loader" class="overlay-loader">
+                                    <div class="loader-background color-flip"></div>
+                                    <img class="loader-icon spinning-cog" src="/typo3conf/ext/layerslider/Resources/Public/Backend/img/spinner.svg" data-cog="cog01">
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="min-height: 52px;">
+
+                            </div>
+                            <div class="panel-body news-panel-body" style="height: 350px; overflow-x: scroll; color: #999; background: #F5F5F5">
+                                <div id="loader1" class="overlay-loader">
+                                    <div class="loader-background color-flip"></div>
+                                    <img class="loader-icon spinning-cog" src="/typo3conf/ext/layerslider/Resources/Public/Backend/img/spinner.svg" data-cog="cog01">
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="min-height: 52px;">
+
+                            </div>
+                            <div class="panel-body news-panel-body" style="height: 350px; overflow-x: scroll; color: #999; background: #F5F5F5">
+                                <div id="loader2" class="overlay-loader">
+                                    <div class="loader-background color-flip"></div>
+                                    <img class="loader-icon spinning-cog" src="/typo3conf/ext/layerslider/Resources/Public/Backend/img/spinner.svg" data-cog="cog01">
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            var streamActionUrl = "{f:uri.action(action:'getNewsStream')}";
+            $.ajax({
+                type: "GET",
+                url: streamActionUrl.replace(/&amp;/g, '&')
+            }).done(function( data ) {
+                $('.row.lsnews').html(data);
+            });
+        </script>
+
+    </div>
+</f:section>

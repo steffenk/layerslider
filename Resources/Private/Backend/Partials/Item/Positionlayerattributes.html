@@ -1,0 +1,30 @@
+<f:section name="class">ls-layer ls-s3 {f:if(condition: '{item.configuration.cssclass}', then:'{item.configuration.cssclass}')}</f:section>
+
+<f:section name="id">layer-{item.slide.uid}-{item.uid}</f:section>
+
+<f:section name="style">position: static;
+    {f:if(condition: '{item.configuration.left}', then:'left:{item.configuration.left}px;')}
+    {f:if(condition: '{item.configuration.top}', then:'top:{item.configuration.top}px;')}
+    {f:if(condition: '{item.configuration.width}', then:'width:{item.configuration.width}px;')}
+    {f:if(condition: '{item.configuration.height}', then:'height:{item.configuration.height}px;')}
+    {f:if(condition: '{item.configuration.textalign}', then:'text-align:{item.configuration.textalign};')}
+    {f:if(condition: '{item.configuration.fontsize}', then:'font-size:{item.configuration.fontsize}px;')}
+    {f:if(condition: '{item.configuration.color}', then:'color:{item.configuration.color};')}
+    {f:if(condition: '{item.configuration.bgcolor}', then:'background:{item.configuration.bgcolor};')}
+    {f:if(condition: '{item.configuration.paddingtop}', then:'padding-top:{item.configuration.paddingtop}px;')}
+    {f:if(condition: '{item.configuration.paddingright}', then:'padding-right:{item.configuration.paddingright}px;')}
+    {f:if(condition: '{item.configuration.paddingbottom}', then:'padding-bottom:{item.configuration.paddingbottom}px;')}
+    {f:if(condition: '{item.configuration.paddingleft}', then:'padding-left:{item.configuration.paddingleft}px;')}
+    {f:if(condition: '{item.configuration.bordertop}', then:'border-top:{item.configuration.bordertop};')}
+    {f:if(condition: '{item.configuration.borderright}', then:'border-right:{item.configuration.borderright};')}
+    {f:if(condition: '{item.configuration.borderbottom}', then:'border-bottom:{item.configuration.borderbottom};')}
+    {f:if(condition: '{item.configuration.borderleft}', then:'border-left:{item.configuration.borderleft};')}
+    {f:if(condition: '{item.configuration.cssstyles}', then:'{item.configuration.cssstyles}')}
+</f:section>
+
+<f:section name="styleParent">
+    {f:if(condition: '{item.configuration.left}', then:'left:{item.configuration.left}px;')}
+    {f:if(condition: '{item.configuration.top}', then:'top:{item.configuration.top}px;')}
+    {f:if(condition: '{item.configuration.width}', then:'width:{item.configuration.width}px;')}
+    {f:if(condition: '{item.configuration.height}', then:'height:{item.configuration.height}px;')}
+</f:section>

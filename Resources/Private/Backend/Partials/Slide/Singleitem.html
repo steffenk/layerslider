@@ -1,0 +1,915 @@
+
+<div class="panel panel-info layerslider-slideitem" data-slide="{slide.uid}" >
+	<div class="panel-heading"  >
+        <div class="row">
+            <div class="col-xs-9" onclick="storeCollapseCookie('collapse-{slide.uid}');" data-toggle="collapse" data-target="#collapse-{slide.uid}" aria-expanded="false" aria-controls="collapse-{slide.uid}" style="cursor: pointer;">
+                <h3 class="panel-title" title="{slide.uid}" style="cursor: pointer;">{slide.title} {f:if(condition:'{slide.hidden}==1', then:'(hidden)')}</h3>
+            </div>
+            <div class="col-xs-3">
+                <div class="text-right">
+                    <div class="btn-group">
+                        <a class="btn btn-primary btn-circle" href="#collapse-{slide.uid}" onclick="storeCollapseCookie('collapse-{slide.uid}');" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.edit')}" data-toggle="collapse" data-target="#collapse-{slide.uid}" aria-expanded="false" aria-controls="collapse-{slide.uid}"><i class="fa fa-fw fa-edit"></i></a>
+                        <a data-toggle="modal" data-target="#delete-slide-{slide.uid}" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.delete')}" class="btn btn-primary btn-circle"><i class="fa fa-fw fa-trash-o"></i></a>
+                        <a href="#" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.copy')}" onclick="copySlide(this); return false;" class="copyStart btn btn-primary btn-circle" data-slideuidulement="{slide.uid}" data-copyslide-uid="{slide.uid}"><i class="fa fa-fw fa-files-o"></i></a>
+                        <a href="#" style="display: none;" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.copystop')}" onclick="copySlide(this); return false;" data-slideuidulement="{slide.uid}" data-stopcopyslide-uid="{slide.uid}" class="copyStop btn btn-primary btn-circle"><i style="color: red;" class="fa fa-fw fa-files-o"></i></a>
+                        <a class="sort-handle btn btn-primary btn-circle" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.sort')}"  href="#" onclick="return false;"><i class="fa fa-fw fa-arrows-v"></i></a>
+                        <f:link.action action="paste" controller="Slide" title="{f:translate(key:'partial.slide.singleitem.headerbuttons.paste')}" class="pasteSlide btn btn-success btn-circle" style="display: none;" arguments="{slider: slide.slider}" additionalAttributes="{onclick:'pasteSlide(this); return false;'}"><i class="fa fa-clipboard"></i></f:link.action>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+	</div>
+
+
+	<div class="panel-body">
+        <f:if condition="{slide.falimage}">
+            <f:then>
+                <f:image src="{slide.falimage.originalResource.originalFile.uid}" alt="" title="" width="100" />
+            </f:then>
+        </f:if>
+
+		<div class="collapse collapse-{slide.uid}" id="collapse-{slide.uid}">
+    		<p>&nbsp;</p>
+			<div>
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#tabs-{slide.uid}-1" onclick="storeTabsCookie('tabs-{slide.uid}', 1)" aria-controls="tabs-{slide.uid}-1" role="tab" data-toggle="tab"><f:translate key="partial.slide.singleitem.tabs.basic" /></a></li>
+					<li role="presentation"><a href="#tabs-{slide.uid}-2"  onclick="storeTabsCookie('tabs-{slide.uid}', 2)" aria-controls="tabs-{slide.uid}-2" role="tab" data-toggle="tab"><f:translate key="partial.slide.singleitem.tabs.slideimage" /></a></li>
+					<li role="presentation"><a href="#tabs-{slide.uid}-3"  onclick="storeTabsCookie('tabs-{slide.uid}', 3)" aria-controls="tabs-{slide.uid}-3" role="tab" data-toggle="tab"><f:translate key="partial.slide.singleitem.tabs.layers" /></a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content tab-content-slide-{slide.uid}">
+					<div role="tabpanel" class="tab-pane active" id="tabs-{slide.uid}-1">
+
+                        <table class="table table-bordered">
+                            <tr class="active">
+                                <th colspan="2" class=""><f:translate key="partial.slide.singleitem.tabs.basic.name.label" /></th>
+                            </tr>
+                            <tr>
+                                <td width="350"><input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][title]" class="form-control" title=""value="{slide.title}" /></td>
+                                <td width=""><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.name.text" /></p></td>
+                            </tr>
+                        </table>
+
+                        <div class="panel-group" id="accordion-basic-{slide.uid}" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="basic-{slide.uid}">
+                                    <h2 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion-basic-{slide.uid}" href="#collapse-basic-{slide.uid}" aria-expanded="false" aria-controls="collapse-basic-{slide.uid}">
+                                            <f:translate key="partial.slide.singleitem.tabs.basic.visibility.label" />
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapse-basic-{slide.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="basic-{slide.uid}">
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.visibility.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="250"><input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][hidden]" type="checkbox" value="1" {f:if(condition:'{slide.hidden}==1', then:'checked')} /></td>
+                                                <td width="80"><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.visibility.text" /></p></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.starttime.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <div class='input-group date'>
+                                                            <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][starttime]" type='text' class="form-control" value="{f:if(condition:'{slide.starttime} > 0', then:'{slide.starttime->f:format.date(format:\'d.m.Y H:i\')}')}" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.endtime.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-group">
+                                                        <div class='input-group date'>
+                                                            <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][endtime]" type='text' class="form-control" value="{f:if(condition:'{slide.endtime} > 0', then:'{slide.endtime->f:format.date(format:\'d.m.Y H:i\')}')}" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="background-{slide.uid}">
+                                    <h2 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion-basic-{slide.uid}" href="#collapse-background-{slide.uid}" aria-expanded="false" aria-controls="collapse-background-{slide.uid}">
+                                            <f:translate key="partial.slide.singleitem.tabs.basic.background.label" />
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapse-background-{slide.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="background-{slide.uid}">
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.background.bgsize.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="250">
+                                                    <select name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][bgsize]" class="form-control">
+                                                        <option value="" {f:if(condition:'{0:slide.configuration.bgsize}=={0:\'\'}', then:'selected')}>inherit</option>
+                                                        <option value="auto" {f:if(condition:'{0:slide.configuration.bgsize}=={0:\'auto\'}', then:'selected')}>auto</option>
+                                                        <option value="cover" {f:if(condition:'{0:slide.configuration.bgsize}=={0:\'cover\'}', then:'selected')}>cover</option>
+                                                        <option value="contain" {f:if(condition:'{0:slide.configuration.bgsize}=={0:\'contain\'}', then:'selected')}>contain</option>
+                                                        <option value="stretch" {f:if(condition:'{0:slide.configuration.bgsize}=={0:\'stretch\'}', then:'selected')}>stretch</option>
+                                                    </select>
+                                                </td>
+                                                <td width="80"><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgsize.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgsize.text1" /></p></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.background.bgposition.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][bgposition]" type='text' class="form-control" value="{slide.configuration.bgposition}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgposition.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgposition.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.background.bgcolor.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][bgcolor]" type='text' class="form-control" value="{slide.configuration.bgcolor}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgcolor.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.background.bgcolor.text1" /></p></td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="transition-{slide.uid}">
+                                    <h2 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion-basic-{slide.uid}" href="#collapse-transition-{slide.uid}" aria-expanded="false" aria-controls="collapse-transition-{slide.uid}">
+                                            <f:translate key="partial.slide.singleitem.tabs.basic.transition.label" />
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapse-transition-{slide.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="transition-{slide.uid}">
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.transition.duration.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="250">
+                                                    <input type="hidden" name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][slideDelay]" class="form-control" value="0" />
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][duration]" class="form-control" value="{f:if(condition:'{slide.configuration.slideDelay} > 0', then:'{slide.configuration.slideDelay}', else:'{slide.configuration.duration}')}" />
+                                                </td>
+                                                <td width="80"><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.transition.duration.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.transition.duration.text1" /></p></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.transitions.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][use2d3dtransition]" onclick=""  title="" class="" value="1" {f:if(condition: '{slide.configuration.use2d3dtransition} == 1', then: 'checked="checked"')} />
+                                                    <span class="btn btn-primary" onclick="handleTransitions(this);" style="cursor: pointer;"><i class="fa fa-edit"></i> <f:translate key="partial.slide.singleitem.tabs.basic.transitions.label" /> (<span class="trcount-{slide.uid}">0</span>)</span>
+                                                    <input type="hidden" name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][2dtransition]" value="{slide.configuration.2dtransition}"/>
+                                                    <input type="hidden" name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][3dtransition]" value="{slide.configuration.3dtransition}"/>
+                                                    <script>
+                                                        var tr2dlist = "{slide.configuration.2dtransition}";
+                                                        var tr3dlist = "{slide.configuration.3dtransition}";
+                                                        var trcountSlideUid = {slide.uid};
+                                                        var countLength = 0;
+                                                        if(tr2dlist.length > 0) {
+                                                            countLength = tr2dlist.split(",").length;
+                                                        }
+                                                        if(tr3dlist.length > 0) {
+                                                            countLength = countLength + tr3dlist.split(",").length;
+                                                        }
+                                                        $('.trcount-'+trcountSlideUid).html( countLength );
+                                                    </script>
+                                                </td>
+                                                <td></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.transitions.text" /></p></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.transition.transitionduration.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][transitionduration]" type='text' class="form-control" value="{slide.configuration.transitionduration}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.transition.transitionduration.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.transition.transitionduration.text1" /></p></td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="kenburns-{slide.uid}">
+                                    <h2 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion-basic-{slide.uid}" href="#collapse-kenburns-{slide.uid}" aria-expanded="false" aria-controls="collapse-kenburns-{slide.uid}">
+                                            <f:translate key="partial.slide.singleitem.tabs.basic.kenburns.label" />
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapse-kenburns-{slide.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="kenburns-{slide.uid}">
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="250">
+                                                    <select name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][kenburnszoom]" class="form-control">
+                                                        <option value="">-</option>
+                                                        <option value="in" {f:if(condition:'{0:slide.configuration.kenburnszoom}=={0:\'in\'}', then:'selected')}>in</option>
+                                                        <option value="out" {f:if(condition:'{0:slide.configuration.kenburnszoom}=={0:\'out\'}', then:'selected')}>out</option>
+                                                    </select>
+
+                                                </td>
+                                                <td width="80"><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnszoom.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][kenburnsscale]" type='text' class="form-control" value="{slide.configuration.kenburnsscale}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsscale.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][kenburnsrotate]" type='text' class="form-control" value="{slide.configuration.kenburnsrotate}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.kenburns.kenburnsrotate.text1" /></p></td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading" role="tab" id="parallax-{slide.uid}">
+                                    <h2 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion-basic-{slide.uid}" href="#collapse-parallax-{slide.uid}" aria-expanded="false" aria-controls="collapse-parallax-{slide.uid}">
+                                            <f:translate key="partial.slide.singleitem.tabs.basic.parallax.label" />
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div id="collapse-parallax-{slide.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="parallax-{slide.uid}">
+                                    <div class="panel-body">
+                                        <table class="table table-bordered">
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="250">
+                                                    <select name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxtype]" class="form-control">
+                                                        <option value="">-</option>
+                                                        <option value="2d" {f:if(condition:'{0:slide.configuration.parallaxtype}=={0:\'2d\'}', then:'selected')}>2d</option>
+                                                        <option value="3d" {f:if(condition:'{0:slide.configuration.parallaxtype}=={0:\'3d\'}', then:'selected')}>3d</option>
+                                                    </select>
+
+                                                </td>
+                                                <td width="80"><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtype.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="">
+                                                    <select name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxevent]" class="form-control">
+                                                        <option value="">-</option>
+                                                        <option value="cursor" {f:if(condition:'{0:slide.configuration.parallaxevent}=={0:\'cursor\'}', then:'selected')}>cursor</option>
+                                                        <option value="scroll" {f:if(condition:'{0:slide.configuration.parallaxevent}=={0:\'scroll\'}', then:'selected')}>scroll</option>
+                                                    </select>
+
+                                                </td>
+                                                <td width=""><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxevent.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td width="">
+                                                    <select name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxaxis]" class="form-control">
+                                                        <option value="none" {f:if(condition:'{0:slide.configuration.parallaxaxis}=={0:\'none\'}', then:'selected')}>none</option>
+                                                        <option value="both" {f:if(condition:'{0:slide.configuration.parallaxaxis}=={0:\'both\'}', then:'selected')}>both</option>
+                                                        <option value="x" {f:if(condition:'{0:slide.configuration.parallaxaxis}=={0:\'x\'}', then:'selected')}>x</option>
+                                                        <option value="y" {f:if(condition:'{0:slide.configuration.parallaxaxis}=={0:\'y\'}', then:'selected')}>y</option>
+                                                    </select>
+
+                                                </td>
+                                                <td width=""><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxaxis.text1" /></p></td>
+                                            </tr>
+
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxtransformorigin]" type='text' class="form-control" value="{slide.configuration.parallaxtransformorigin}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformorigin.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxdurationmove]" type='text' class="form-control" value="{slide.configuration.parallaxdurationmove}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationmove.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxdurationleave]" type='text' class="form-control" value="{slide.configuration.parallaxdurationleave}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdurationleave.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxdistance]" type='text' class="form-control" value="{slide.configuration.parallaxdistance}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxdistance.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxrotate]" type='text' class="form-control" value="{slide.configuration.parallaxrotate}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxrotate.text1" /></p></td>
+                                            </tr>
+                                            <tr class="active">
+                                                <th colspan="3" class=""><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.label" /></th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][parallaxtransformperspective]" type='text' class="form-control" value="{slide.configuration.parallaxtransformperspective}" />
+                                                </td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.text" /></p></td>
+                                                <td><p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.parallax.parallaxtransformperspective.text1" /></p></td>
+                                            </tr>
+
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label><f:translate key="partial.slide.singleitem.tabs.basic.link.label" /></label>
+                                    <div class="input-group">
+                                        <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][linkSlide]" onchange="$(this).focus();" data-formengine-input-name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][linkSlide]" id="input_wizard_{item.uid}" class="form-control" value="{slide.configuration.linkSlide}">
+                                        <span class="input-group-addon" onclick="window.open('{linkWizardUrl}&P[formName]=slider&P[itemName]=tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][linkSlide]&P[currentValue]={slide.configuration.linkSlide}&P[fieldChangeFunc]', 'myWindow', 'width=800, height=800')" style="cursor: pointer;"><span style="cursor: pointer;" class="fa fa-edit"></span></span>
+                                    </div>
+                                    <p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.link.text" /></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><f:translate key="partial.slide.singleitem.tabs.basic.cssclass.label" /></label>
+                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][cssClass]" class="form-control" value="{slide.configuration.cssClass}" />
+                                    <p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.cssclass.text" /></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><f:translate key="partial.slide.singleitem.tabs.basic.deeplink.label" /></label>
+                                    <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][configuration][deeplink]" class="form-control" title="" value="{slide.configuration.deeplink}" />
+                                    <p class="help-block"><f:translate key="partial.slide.singleitem.tabs.basic.deeplink.text" /></p>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+
+
+                    <div role="tabpanel" class="tab-pane" id="tabs-{slide.uid}-2">
+                        <p>&nbsp;</p>
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <div class="row" data-slideimage="{slide.uid}">
+                                    <f:if condition="{slide.falimage}">
+                                        <div class="col-lg-3 col-sm-4 col-xs-4">
+                                            <f:image src="{slide.falimage.originalResource.originalFile.uid}" maxWidth="300" style="width: 100%; height:auto;"/>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-8 col-xs-8">
+                                            <div class="form-group">
+                                                <label for=""><f:translate key="partial.slide.singleitem.tabs.image.title" /></label>
+                                                <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][fileReference][title]" type='text' class="form-control" value="{slide.falimage.originalResource.title}" />
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label for=""><f:translate key="partial.slide.singleitem.tabs.image.alternative" /></label>
+                                                <input name="tx_layerslider_web_layersliderm1[slider][formslides][{slide.uid}][fileReference][alternative]" type='text' class="form-control" value="{slide.falimage.originalResource.alternative}" />
+                                            </div>
+                                        </div>
+                                    </f:if>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-right">
+                                            <button type="button" class="btn btn-primary "  onclick="window.open('{fileWizardUrl}&bparams=slide_{slide.uid}|||gif,jpg,jpeg,tif,bmp,pcx,tga,png,pdf,ai|', 'myWindow', 'width=800, height=800, scrollbars=1')">
+                                                <f:translate key="button.addImages" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="tabs-{slide.uid}-3">
+						<div class="lsclearfix">
+                            <f:if condition="{slide.falimage}">
+                                <f:then>
+                                    <div>
+                                        <div class="layerslider-item-slides-area-item">
+
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4><i class="fa fa-desktop"></i> <f:translate key="partial.slide.singleitem.tabs.layers.header" /></h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <f:format.raw><f:translate key="partial.slide.singleitem.tabs.layers.message" /></f:format.raw>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4><i class="fa fa-arrows"></i> <f:translate key="partial.slide.singleitem.tabs.layers.positioningstage" /></h4>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.grid" />
+                                                    <select onchange='if( $("option:selected", this).val() !="") { $(".candrag").draggable( "option", "grid", [ $("option:selected", this).val(), $("option:selected", this).val()] ); } else { $(".candrag").draggable( "option", "grid", false); }'>
+                                                        <option value=""><f:translate key="partial.slide.singleitem.tabs.layers.nogrid" /></option>
+                                                        <option value="10">10 x 10 pixels</option>
+                                                        <option value="20">20 x 20 pixels</option>
+                                                        <option value="30">30 x 30 pixels</option>
+                                                        <option value="40">40 x 40 pixels</option>
+                                                        <option value="50">50 x 50 pixels</option>
+                                                        <option value="60">60 x 60 pixels</option>
+                                                        <option value="70">70 x 70 pixels</option>
+                                                        <option value="80">80 x 80 pixels</option>
+                                                        <option value="90">90 x 90 pixels</option>
+                                                        <option value="100">100 x 100 pixels</option>
+                                                    </select><br />
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.objectsnap" /> <input type="checkbox" onchange=' if($(this).is(":checked")) { $(".candrag").draggable( "option", "snap", true );  } else { $(".candrag").draggable( "option", "snap", false );  }' /><br />
+
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.movement" />
+
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.movement.none" /> <input type="radio" name="uicm[]" checked="checked" onchange='$(".candrag").draggable( "option", "axis", false );'  />&nbsp;&nbsp;
+
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.movement.vertical" /> <input type="radio" name="uicm[]" onchange='$(".candrag").draggable( "option", "axis", "y" );' />&nbsp;&nbsp;
+
+                                                    <f:translate key="partial.slide.singleitem.tabs.layers.movement.horizontal" /> <input type="radio" name="uicm[]" onchange='$(".candrag").draggable( "option", "axis", "x" );' /><br />
+
+                                                    <br /> <br />
+
+                                                    <div class="timelineInstanceCreator" data-slider="{slide.slider.uid}" data-slide="{slide.uid}"><br /></div>
+
+                                                    <div class="positioningOutline" style="width: 100%; overflow-y: scroll">
+                                                        <div class="layer-item-position-stage stage-{slide.uid} layerslider-{slider.uid}" data-slidePoitioningLayerWrapper="{slide.uid}" style="width: 100%; height: {slide.slider.options.height}; position: relative;">
+
+                                                            <div class="inner ls-container ls-{slider.options.skin}"  style="position: relative; width: {slide.slider.options.width}; height: {slide.slider.options.height};">
+                                                                <f:if condition="{slide.falimage}">
+                                                                    <f:image src="{slide.falimage.originalResource.originalFile.uid}" additionalAttributes="{data-imageforslide:slide.uid}" alt="" title="" style="position: absolute; left: 0; top: 0;" />
+                                                                </f:if>
+
+                                                                <div class="ls-slide ls-slider-{slider.uid}-slide-{slide.uid}" data-slidePoitioningLayer="{slide.uid}" style="transform: translateZ(1); height: {slide.slider.options.height};" data-ls="{f:render(partial:'Slide/Slideattributes', arguments:'{s:slide}', section:'data')}">
+
+                                                                    <!-- replace_preview -->
+                                                                    <f:for each="{slide.items}" as="item" iteration="index">
+
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'image'}">
+                                                                            <f:if condition="{slide.falimage}">
+                                                                                <div class="ls-wrapper ls-in-out candrag resizeable img-resize" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                    <f:image src="{item.falimage.originalResource.originalFile.uid}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')} width:100%; height: auto;" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" additionalAttributes="{data-ls:'{f:render(partial:\'Item/Layerattributes\', arguments:\'{item:item}\', section:\'data\')}'}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}"/>
+                                                                                </div>
+                                                                            </f:if>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'paragraph'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+
+                                                                                <f:if condition="{item.configuration.clipin}">
+                                                                                    <f:then>
+                                                                                        <div class="ls-wrapper ls-clip">
+                                                                                            <p data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content}</p>
+                                                                                        </div>
+                                                                                    </f:then>
+                                                                                    <f:else>
+                                                                                        <p data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content}</p>
+                                                                                    </f:else>
+                                                                                </f:if>
+
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'span'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <span data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </span>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h1'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h1 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h1>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h2'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h2 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h2>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h3'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h3 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h3>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h4'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h4 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h4>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h5'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h5 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h5>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'h6'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <h6 data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">{item.content} </h6>
+                                                                            </div>
+                                                                        </f:if>
+
+                                                                        <f:if condition="{0:item.contenttype} == {0:'html'}">
+                                                                            <div class="ls-wrapper ls-in-out candrag resizeable" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'styleParent')} display: block;">
+                                                                                <div data-toggle="tooltip" title="{item.title}" style="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'style')}" id="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'id')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" class="{f:render(partial:'Item/Positionlayerattributes', arguments:'{item:item}', section:'class')}">
+                                                                                    <f:format.html parseFuncTSPath="">{item.content}</f:format.html>
+                                                                                </div>
+                                                                            </div>
+                                                                        </f:if>
+                                                                    </f:for>
+                                                                    <!-- replace_preview -->
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <script>
+                                            var slideImageWidth = $('img[data-imageforslide="{slide.uid}"]').width();
+                                            $('div[data-slidePoitioningLayerWrapper="{slide.uid}"]').width(slideImageWidth);
+                                            $('div[data-slidePoitioningLayer="{slide.uid}"]').width(slideImageWidth);
+                                        </script>
+
+                                        <f:if condition="{slide.slider.options.responsiveUnder}">
+                                            <script>
+
+                                                var responsiveUnder = {slide.slider.options.responsiveUnder};
+                                                var slideUid = {slide.uid};
+                                                var leftMarginal = $('<div />').css({
+                                                    background:'repeating-linear-gradient(135deg, rgba(0,0,0,.4), rgba(0,0,0,.4) .25em , rgba(0,0,0,.7) 0, rgba(0,0,0,.7) .75em)',
+                                                    position: 'absolute',
+                                                    left: '0px',
+                                                    top:'0px',
+                                                    height: $('img[data-imageforslide="'+slideUid+'"]').height(),
+                                                    width: (slideImageWidth-responsiveUnder)/2
+                                                });
+
+                                                var rightMarginal = $('<div />').css({
+                                                    background:'repeating-linear-gradient(135deg, rgba(0,0,0,.4), rgba(0,0,0,.4) .25em, rgba(0,0,0,.7) 0, rgba(0,0,0,.7) .75em)',
+                                                    position: 'absolute',
+                                                    right: '0px',
+                                                    top:'0px',
+                                                    height: $('img[data-imageforslide="'+slideUid+'"]').height(),
+                                                    width: (slideImageWidth-responsiveUnder)/2
+                                                });
+                                                $('div[data-slidePoitioningLayer="'+slideUid+'"]').parent().parent().append(leftMarginal);
+                                                $('div[data-slidePoitioningLayer="'+slideUid+'"]').parent().parent().append(rightMarginal);
+                                            </script>
+                                        </f:if>
+                                        <script>
+                                            connectDragableElementsToArea({slide.uid});
+                                        </script>
+
+                                        <div style="display: none;" id="time-line-slide-{slide.uid}">
+                                            <div class="alert alert-danger duration-alert-{slide.uid}" style="display: none;">
+                                                <h4><f:translate key="partial.slide.singleitem.tabs.layers.layertimewarning.header" /></h4>
+                                                <f:format.raw><f:translate key="partial.slide.singleitem.tabs.layers.layertimewarning.text" /></f:format.raw>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 text-right" style="margin-right: 8px;">
+                                                    <div class="btn-group">
+                                                        <a href="" class="btn btn-default" id="recreate-{slide.uid}" data-slider="{slide.slider.uid}" data-slide="{slide.uid}" onclick="updatePositionArea( '.stage-{slide.uid}' , '.layer-settings-page-{slide.uid}', {slide.slider.uid}, {slide.uid}); return false;"><i class="fa fa-refresh"></i> <f:translate key="partial.slide.singleitem.tabs.layers.timeline.updatebutton" /></a>
+                                                        <a href="#" onclick="return false;" class="btn btn-default" id="play-{slide.uid}"><f:translate key="partial.slide.singleitem.tabs.layers.timeline.buttons.play" /></a>
+                                                        <a href="#" onclick="return false;" class="btn btn-default" id="pause-{slide.uid}"><f:translate key="partial.slide.singleitem.tabs.layers.timeline.buttons.pause" /></a>
+                                                        <a href="#" onclick="return false;" class="btn btn-default" id="reverse-{slide.uid}"><f:translate key="partial.slide.singleitem.tabs.layers.timeline.buttons.reverse" /></a>
+                                                        <a href="#" onclick="return false;" class="btn btn-default" id="resume-{slide.uid}"><f:translate key="partial.slide.singleitem.tabs.layers.timeline.buttons.resume" /></a>
+                                                        <a href="#" onclick="return false;" class="btn btn-default" id="restart-{slide.uid}"><f:translate key="partial.slide.singleitem.tabs.layers.timeline.buttons.restart" /></a>
+                                                        <span class="btn btn-success time timer-{slide.uid}" style="min-width: 44px;">0.00</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row ">
+                                                <div id="sliderWrapper">
+                                                    <div class="slider-times">
+                                                    </div>
+                                                    <div id="slider-{slide.uid}" class="slider-slide" style="margin-left: 268px; margin-right: 8px;">
+
+                                                    </div>
+                                                    <table class="table table-bordered timelinetable timelinetable-{slide.uid}">
+                                                        <!-- replace_timeline -->
+                                                        <tr>
+                                                            <td {f:if(condition:'{slide.items->f:count()} > 0', then:'colspan="3"')} width="260"><small>Slider</small></td>
+                                                            <td>
+                                                                <div style="width: auto; position: relative; margin: 0 8px;">
+                                                                    <div class="slideDuration slideDuration-{slide.uid}" style="background: #ff6c57; width: 100%; position: relative" ></div>
+                                                                    <div class="timeline-td-overlay"></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tbody class="slide-item-list-{slide.uid} ">
+                                                        <f:for each="{slide.items}" as="item" iteration="i">
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <f:if condition="{0:item.contenttype}=={0:'image'}">
+                                                                        <f:then>
+                                                                            <f:image src="{item.falimage.originalResource.originalFile.uid}" width="20c" height="20c"/>
+                                                                        </f:then>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h1'}">
+                                                                        <span class="tl-textcontent">
+                                                                            H1
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h2'}">
+                                                                        <span class="tl-textcontent">
+                                                                            H2
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h3'}">
+                                                                        <span class="tl-textcontent">
+                                                                            H3
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h4'}">
+                                                                        <span class="tl-textcontent">
+                                                                            H4
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h5'}">
+                                                                        <span class="tl-textcontent">
+                                                                            H5
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'h6'}">
+                                                                        <span class="tl-textcontent">
+                                                                            h6
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'span'}">
+                                                                        <span class="tl-textcontent">
+                                                                            S
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'paragraph'}">
+                                                                        <span class="tl-textcontent">
+                                                                            P
+                                                                        </span>
+                                                                    </f:if>
+                                                                    <f:if condition="{0:item.contenttype}=={0:'html'}">
+                                                                        <span class="tl-textcontent">
+                                                                            <i class="fa fa-fw fa-code"></i>
+                                                                        </span>
+                                                                    </f:if>
+
+                                                                </td>
+                                                                <td width="80">
+                                                                    <small data-toggle="tooltip"  title="{item.title}"><f:format.crop maxCharacters="10" respectWordBoundaries="false" append="">{item.title}</f:format.crop></small></td>
+                                                                <td width="140">
+                                                                    <a data-toggle="modal" data-target="#delete-item-{item.uid}" title="{f:translate(key:'partial.item.singleitem.headerbuttons.delete')}" class="fa fa-fw fa-trash-o esedit"></a>
+                                                                    <a class="sort-handle fa fa-fw fa-arrows-v esedit" title="{f:translate(key:'partial.item.singleitem.headerbuttons.sort')}"  href="#" onclick="return false;"><i class=""></i></a>
+                                                                    <a class="fa fa-eye tlhide" onclick="hideTimeLineObject({slide.uid}, {item.uid}, this);"></a>
+                                                                    <a class="fa fa-pencil esedit" onclick="showEffectSettings({item.uid}, this);"></a>
+                                                                    <a href="#" style="display: none;" title="{f:translate(key:'partial.item.singleitem.headerbuttons.stopcopy')}" onclick="copyLayer(this); return false;" data-layeruidelement="{item.uid}" data-stopcopylayer-uid="{item.uid}" class="copyLayerStop fa fa-fw fa-files-o esedit"></a>
+                                                                    <a href="#" title="{f:translate(key:'partial.item.singleitem.headerbuttons.copy')}" onclick="copyLayer(this); return false;" class="copyLayerStart fa fa-fw fa-files-o esedit" data-layeruidelement="{item.uid}" data-copylayer-uid="{item.uid}"></a>
+                                                                    <f:link.action action="paste" controller="Item" title="{f:translate(key:'partial.item.singleitem.headerbuttons.paste')}" class="pasteLayer fa fa-clipboard esedit" style="display: none;" arguments="{slide: item.slide}" additionalAttributes="{onclick:'pasteLayer(this); return false;'}"></f:link.action>
+                                                                    <input type="hidden" class="sortable-value" name="tx_layerslider_web_layersliderm1[slider][formslides][{item.slide.uid}][formitems][{item.uid}][sorting]" value="{i.index}" {f:if(condition:'{item.hidden}==1', then:'checked')} />
+
+                                                                </td>
+                                                                <td>
+                                                                    <div style="width: auto; position: relative; margin: 0 8px;">
+                                                                        <div class="itemDuration duration-layer-{slide.uid}-{item.uid}" style="height: 20px; background: #09a100; width: 100%; position: relative" ></div>
+                                                                        <div class="itemDuration durationloop-layer-{slide.uid}-{item.uid}" style=" height: 20px; background: #51acd6; width: 100%; position: relative; display: none;" ></div>
+                                                                        <div class="itemDuration durationtext-layer-{slide.uid}-{item.uid}" style="height: 20px; background: #fbb5de; width: 100%; position: relative; display: none;" ></div>
+                                                                        <div class="timeline-td-overlay"></div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </f:for>
+
+                                                        </tbody>
+                                                        <!-- replace_timeline -->
+
+                                                    </table>
+                                                </div>
+                                                <div style="margin: 0 15px;">
+                                                    <table class="table table-bordered timeline-legend">
+                                                        <tr>
+                                                            <td width="260">
+                                                                Legend
+                                                            </td>
+                                                            <td>
+                                                                <div class="row">
+                                                                    <div class="col-xs-10">
+                                                                        <span class="btn" style="background: #FF6C57;">Slide duration</span>
+                                                                        <span class="btn" style="background: #EFCB92;">Layer Duration in/out</span>
+                                                                        <span class="btn" style="background: #5FBE65;">Layer Delay</span>
+                                                                        <span class="btn" style="background: #51ACD6;">Loop/Middle</span>
+                                                                        <span class="btn" style="background: #8A87D7;">Text duration in/out</span>
+                                                                        <span class="btn" style="background: #FBB5DE;">Text delay</span>
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <div class="text-right">
+                                                                            <!-- button_newLayer_start -->
+                                                                            <f:form.button name="newLayer" style="cursor:pointer;" class="btn btn-success" value="{slide.uid}"><i class="fa fa-plus-circle"></i> <f:translate key="partial.slide.singleitem.tabs.layers.button.new" /></f:form.button>
+                                                                            <!-- button_newLayer_end -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- replace_effectpanels -->
+                                            <!-- remove_html_block -->
+                                            <f:for each="{slide.items}" as="item" iteration="i">
+                                                <div id="effect-settings-{item.uid}" class="effect-settings-general" style="display: none;">
+                                                    <f:render partial="Item/Singleitem.html" arguments="{slider: slider, item:item, slide:slide, fileWizardUrl: fileWizardUrl, linkWizardUrl:linkWizardUrl, iteration: i, slidelist:slidelist}" />
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="delete-item-{item.uid}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                <h4 class="modal-title" id="myModalLabel"><f:translate key="modal.delete.title" /></h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <f:translate key="modal.delete.body" arguments="{0:item.title}" />
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <a class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.no" /></a>
+                                                                <f:form.button name="deleteLayer" class="btn btn-danger" value="{item.uid}"><i class="fa fa-trash-o"></i> <f:translate key="modal.buttons.yes" /></f:form.button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </f:for>
+                                            <!-- remove_html_block -->
+                                        </div>
+
+
+                                        <script>
+                                            makeSlideItemListSortable({slide.uid});
+                                        </script>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <h2><i class="fa fa-desktop"></i> <f:translate key="partial.slide.singleitem.tabs.layers.header" /></h2>
+                                    <div class="alert alert-warning">
+                                        <p><f:translate key="partial.slide.singleitem.tabs.layers.alert.savefirst" /></p>
+                                    </div>
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </div>
+			    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="delete-slide-{slide.uid}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel"><f:translate key="modal.delete.title" /></h4>
+				</div>
+				<div class="modal-body">
+					<f:translate key="modal.delete.body" arguments="{0:slide.title}" />
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.no" /></a>
+                    <f:form.button name="deleteSlide" class="btn btn-danger" value="{slide.uid}"><i class="fa fa-trash-o"></i> <f:translate key="modal.buttons.yes" /></f:form.button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script>
+        slideUid = {slide.uid};
+        if( $.cookie('collapse-'+slideUid)) {
+            $('#collapse-'+slideUid).addClass('in');
+        }
+        $("#accordion-basic-{slide.uid}").on('shown.bs.collapse', function (){
+            var active = $("#accordion-basic-{slide.uid} .in").attr('id');
+            $.cookie('activeAccordionGroup-basic-{slide.uid}', active);
+        });
+        $("#accordion-basic-{slide.uid}").on('hidden.bs.collapse', function () {
+            $.removeCookie('activeAccordionGroup-basic-{slide.uid}');
+        });
+        if ($.cookie('activeAccordionGroup-basic-{slide.uid}') != null) {
+            $("#accordion-basic-{slide.uid} .panel-collapse").removeClass('in');
+            $("#" + $.cookie('activeAccordionGroup-basic-{slide.uid}')).addClass("in");
+        }
+        if( $.cookie('tabs-'+slideUid)) {
+            $('a[href="#tabs-'+slideUid+'-' + $.cookie('tabs-'+slideUid) + '"]').trigger('click');
+        }
+
+    </script>
+
+</div>

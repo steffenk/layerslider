@@ -1,0 +1,31 @@
+{
+  "name": "rbiz/layerslider",
+  "type": "typo3-cms-extension",
+  "description": "Layerslider for TYPO3",
+  "time": "2017-10-05",
+  "license": "GPL-3.0+",
+  "keywords": [
+    "TYPO3",
+    "CMS"
+  ],
+  "replace": {
+    "layerslider": "self.version",
+    "rbiz/layerslider": "self.version"
+  },
+  "require": {
+    "typo3/cms-core": ">=6.2.0,<8.7.999",
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MINAV\\Layerslider\\": "Classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "Manfred Rutschmann",
+      "email": "manfred@rutschmann.biz",
+      "homepage": "http://www.rutschmann.biz/"
+    }
+  ]
+}

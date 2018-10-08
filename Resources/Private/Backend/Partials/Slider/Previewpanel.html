@@ -1,0 +1,185 @@
+{namespace mru=MINAV\Layerslider\ViewHelpers}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4><i class="fa fa-eye"></i> <f:translate key="partial.slider.previewpanel.header" /></h4>
+    </div>
+    <div class="panel-body">
+        <div class="">
+
+            <p><f:translate key="partial.slider.previewpanel.text1" /></p>
+            <p><f:translate key="partial.slider.previewpanel.previewwidth.text" /> <f:form.textfield id="previewPanelSize"  class="form-control input" style="width: 100px; display: inline-block;" size="5" property="options.previewPanelSize" /> px <button class="btn btn-default "><i class="fa fa-refresh"></i> <f:translate key="partial.slider.previewpanel.button.update" /></button><br />
+            </p>
+            <f:if condition="{slider.slides}">
+                <div class="inner container-outerwrap"  style="{f:if(condition: '{slider.options.previewPanelSize}', then:'width: {slider.options.previewPanelSize}px')}">
+
+                    <div id="layerslider-container">
+
+                        <div id="layerslider-{slider.uid}" class="layerslider-{slider.uid}" style="width: {options.width}; height: {options.height};  margin: 0 auto;">
+
+                            <f:for each="{slider.slides}" as="s" iteration="i">
+
+                                <div class="ls-slider-{slider.uid}-slide-{s.uid} ls-slide{f:if(condition: '{s.configuration.cssClass}', then:' {s.configuration.cssClass}')}" style="" data-ls="{f:render(partial:'Slide/Slideattributes', arguments:'{s:s}', section:'data')}">
+                                    <f:if condition="{s.falimage}">
+                                        <f:image src="{s.falimage.originalResource.originalFile.uid}" class="ls-bg" />
+                                    </f:if>
+
+                                    <f:if condition="{s.hidden}==1">
+                                        <div class="ls-l" style="background: red; color: #FFF; width:150px; padding: 15px 0; vertical-align: middle; text-align: center; font-size: 24px; border: 1px solid black;">preview</div>
+                                    </f:if>
+
+                                    <!-- set_previewpanel_elements -->
+                                    <!-- remove_html_block -->
+                                        <f:for each="{s.items}" as="item">
+
+
+                                            <f:if condition="{item.link}">
+                                                <f:then>
+                                                    <a href="#" class="ls-l" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">
+                                                        <f:render section="layerContent" arguments="{item: item, slider: slider}" />
+                                                    </a>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:render section="layerContent" arguments="{item: item, slider: slider}" />
+                                                </f:else>
+                                            </f:if>
+
+                                        </f:for>
+                                        <!-- remove_html_block -->
+                                        <f:if condition="{s.configuration.linkSlide}">
+                                            <a href="" class="ls-link"></a>
+                                        </f:if>
+                                    </div>
+
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+
+                </f:if>
+                <br />
+            </div>
+
+            <script type="text/javascript">
+
+                var theSlider;
+                var layersliderId = "layerslider-{slider.uid}";
+                var ls = $("<div/>").prop("id", layersliderId);
+
+                $(document).ready(function(){
+                    theSlider = $('#'+layersliderId).layerSlider({
+                    <f:if condition="{slider.options.maxRatio}">maxRatio : "{slider.options.maxRatio}",</f:if>
+                    <f:if condition="{slider.options.insertMethod}">insertMethod : "{slider.options.insertMethod}",</f:if>
+                    <f:if condition="{slider.options.responsiveUnder}">responsiveUnder : "{slider.options.responsiveUnder}",</f:if>
+                    <f:if condition="{slider.options.insertSelector}">insertSelector : "{slider.options.insertSelector}",</f:if>
+                    <f:if condition="{slider.options.clipSlideTransition}">clipSlideTransition : "{slider.options.clipSlideTransition}",</f:if>
+                    hideOnMobile : {f:if(condition:'{slider.options.hideOnMobile}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.hideUnder}">hideUnder : "{slider.options.hideUnder}",</f:if>
+                    slideOnSwipe : {f:if(condition:'{slider.options.slideOnSwipe}', then:'true', else:'false')},
+                    optimizeForMobile : {f:if(condition:'{slider.options.optimizeForMobile}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.firstSlide}">firstSlide : "{slider.options.firstSlide}",</f:if>
+                    <f:if condition="{slider.options.autoStart}"><f:then>autoStart : true,</f:then><f:else>autoStart : false,</f:else></f:if>
+                        startInViewport : {f:if(condition:'{slider.options.startInViewport}', then:'true', else:'false')},
+                        <f:if condition="{slider.options.pauseOnHover}"><f:then>pauseOnHover : true,</f:then><f:else>pauseOnHover : false,</f:else></f:if>
+                        pauseLayers : {f:if(condition:'{slider.options.pauseLayers}', then:'true', else:'false')},
+                        <f:if condition="{slider.options.keybNav}"><f:then>keybNav : true,</f:then><f:else>keybNav : false,</f:else></f:if>
+                        <f:if condition="{slider.options.touchNav}"><f:then>touchNav : true,</f:then><f:else>touchNav : false,</f:else></f:if>
+                        playByScroll : {f:if(condition:'{slider.options.playByScroll}', then:'true', else:'false')},
+                        <f:if condition="{slider.options.playByScrollSpeed}">playByScrollSpeed : "{slider.options.playByScrollSpeed}",</f:if>
+                        <f:if condition="{slider.options.cycles}">cycles : "{slider.options.cycles}",</f:if>
+                    forceCycles : {f:if(condition:'{slider.options.forceCycles}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.twoWaySlideshow}"><f:then>twoWaySlideshow : true,</f:then><f:else>twoWaySlideshow : false,</f:else></f:if>
+                        shuffleSlideshow : {f:if(condition:'{slider.options.shuffleSlideshow}', then:'true', else:'false')},
+                        <f:if condition="{slider.options.skin}">skin : "{slider.options.skin}",</f:if>
+                        skinsPath: <f:if condition="{slider.options.skinsPath}"><f:then>"{slider.options.skinsPath}"</f:then><f:else>"{f:uri.resource(path:'skins/')}"</f:else></f:if>,
+                        <f:if condition="{slider.options.sliderFadeInDuration}">sliderFadeInDuration : "{slider.options.sliderFadeInDuration}",</f:if>
+                        <f:if condition="{slider.options.globalBGColor}">globalBGColor : "{slider.options.globalBGColor}",</f:if>
+                    <f:if condition="{0:slider.options.globalBGImage}=={0:'false'}"><f:then>globalBGImage: false,</f:then><f:else></f:else>globalBGImage : "{slider.options.globalBGImage}",</f:if>
+                    <f:if condition="{slider.options.globalBGRepeat}">globalBGRepeat : "{slider.options.globalBGRepeat}",</f:if>
+                    <f:if condition="{slider.options.globalBGAttachment}">globalBGAttachment : "{slider.options.globalBGAttachment}",</f:if>
+                    <f:if condition="{slider.options.globalBGPosition}">globalBGPosition : "{slider.options.globalBGPosition}",</f:if>
+                    <f:if condition="{slider.options.globalBGSize}">globalBGSize : "{slider.options.globalBGSize}",</f:if>
+                    navPrevNext : {f:if(condition:'{slider.options.navPrevNext}', then:'true', else:'false')},
+                    navStartStop : {f:if(condition:'{slider.options.navStartStop}', then:'true', else:'false')},
+                    navButtons : {f:if(condition:'{slider.options.navButtons}', then:'true', else:'false')},
+                    hoverPrevNext : {f:if(condition:'{slider.options.hoverPrevNext}', then:'true', else:'false')},
+                    hoverBottomNav : {f:if(condition:'{slider.options.hoverBottomNav}', then:'true', else:'false')},
+                    showBarTimer : {f:if(condition:'{slider.options.showBarTimer}', then:'true', else:'false')},
+                    showCircleTimer : {f:if(condition:'{slider.options.showCircleTimer}', then:'true', else:'false')},
+                    showSlideBarTimer : {f:if(condition:'{slider.options.showSlideBarTimer}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.thumbnailNavigation}">thumbnailNavigation : "{slider.options.thumbnailNavigation}",</f:if>
+                    <f:if condition="{slider.options.tnContainerWidth}">tnContainerWidth : "{slider.options.tnContainerWidth}",</f:if>
+                    <f:if condition="{slider.options.tnWidth}">tnWidth : "{slider.options.tnWidth}",</f:if>
+                    <f:if condition="{slider.options.tnHeight}">tnHeight : "{slider.options.tnHeight}",</f:if>
+                    <f:if condition="{slider.options.tnActiveOpacity}">tnActiveOpacity : {slider.options.tnActiveOpacity},</f:if>
+                    <f:if condition="{slider.options.tnInactiveOpacity}">tnInactiveOpacity : {slider.options.tnInactiveOpacity},</f:if>
+                    autoPlayVideos : {f:if(condition:'{slider.options.autoPlayVideos}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.autoPauseSlideshow}"><f:if condition="{0: slider.options.autoPauseSlideshow} == {0:'auto'}"><f:then>autoPauseSlideshow: 'auto',</f:then><f:else>autoPauseSlideshow: {slider.options.autoPauseSlideshow},</f:else></f:if></f:if>
+                        <f:if condition="{slider.options.youtubePreview}">youtubePreview : "{slider.options.youtubePreview}",</f:if>
+                    <f:if condition="{slider.options.yourLogo}">yourLogo : "{slider.options.yourLogo}",</f:if>
+                    <f:if condition="{slider.options.yourLogoStyle}">yourLogoStyle : "{slider.options.yourLogoStyle}",</f:if>
+                    <f:if condition="{slider.options.yourLogoLink}">yourLogoLink : "{slider.options.yourLogoLink}",</f:if>
+                    <f:if condition="{slider.options.yourLogoTarget}">yourLogoTarget : "{slider.options.yourLogoTarget}",</f:if>
+                    <f:if condition="{slider.options.slideBGSize}">slideBGSize : "{slider.options.slideBGSize}",</f:if>
+                    <f:if condition="{slider.options.slideBGPosition}">slideBGPosition : "{slider.options.slideBGPosition}",</f:if>
+                    <f:if condition="{slider.options.parallaxSensitivity}">parallaxSensitivity : "{slider.options.parallaxSensitivity}",</f:if>
+                    <f:if condition="{slider.options.parallaxCenterLayers}">parallaxCenterLayers : "{slider.options.parallaxCenterLayers}",</f:if>
+                    <f:if condition="{slider.options.parallaxCenterDegree}">parallaxCenterDegree : "{slider.options.parallaxCenterDegree}",</f:if>
+                    parallaxScrollReverse : {f:if(condition:'{slider.options.parallaxScrollReverse}', then:'true', else:'false')},
+                    <f:if condition="{slider.options.forceLayersOutDuration}">forceLayersOutDuration : "{slider.options.forceLayersOutDuration}",</f:if>
+                    allowRestartOnResize : {f:if(condition:'{slider.options.allowRestartOnResize}', then:'true', else:'false')},
+                    useSrcset : {f:if(condition:'{slider.options.useSrcset}', then:'true', else:'false')},
+                    lastNothingForSyntaxComma: false
+                    });
+                });
+
+            </script>
+        </div>
+    </div>
+
+
+
+<f:section name="layerContent">
+    <f:if condition="{0:item.contenttype} == {0:'image'}">
+        <f:if condition="{slider.usefal}">
+            <f:then>
+                <img id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}" src="{f:uri.image(src:'{item.falimage.originalResource.originalFile.uid}')}" alt="{item.falimage.originalResource.alternative}" title="{item.falimage.originalResource.title}" />
+            </f:then>
+            <f:else>
+                <f:if condition="{item.content}">
+                    <img id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}" src="{f:uri.image(src:'uploads/tx_layerslider/{item.content}')}" alt="" title="" />
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'paragraph'}">
+        <p id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</p>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'span'}">
+        <span id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</span>
+    </f:if>
+
+    <f:if condition="{0:item.contenttype} == {0:'h1'}">
+        <h1 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h1>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h2'}">
+        <h2 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h2>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h3'}">
+        <h3 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h3>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h4'}">
+        <h4 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h4>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h5'}">
+        <h5 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h5>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'h6'}">
+        <h6 id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}">{item.content}</h6>
+    </f:if>
+    <f:if condition="{0:item.contenttype} == {0:'html'}">
+        <div id="layer-{item.slide.uid}-{item.uid}" class="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'class')}" data-ls="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'data')}" style="{f:render(partial:'Item/Layerattributes', arguments:'{item:item}', section:'style')}"><f:format.html parseFuncTSPath="">{item.content}</f:format.html></div>
+    </f:if>
+</f:section>
+

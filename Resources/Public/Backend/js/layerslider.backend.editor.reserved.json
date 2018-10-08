@@ -1,0 +1,4 @@
+{
+    "props": [],
+    "vars": ["updatePositionArea", "connectDragableElementsToArea"]
+}

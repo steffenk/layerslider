@@ -1,0 +1,2 @@
+# cat=basic; type=boolean; label= Deactivate Caching Framework: If you don't use start/stop time for slides and layers, and you want use nc_staticfilecache to cache the page where a slider is set, activate this checkbox. In this case, the Caching Framework is disabled and the slider is cached with the page. As result, you don't have a USER_INT object on the page. Please note, that you have to clear the cache by yourself, if you use start/stop time for slides and layers! Clear FE Cache after change this setting!
+deactivateCF = 0

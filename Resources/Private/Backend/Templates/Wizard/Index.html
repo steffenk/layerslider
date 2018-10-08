@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+	<f:section name="content">
+
+
+
+		<f:render partial="Navbar" />
+
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+
+			<f:form action="step1"  name="configuration" id="sliderform" object="{configuration}">
+
+
+				<f:render partial="FormErrors" />
+				<f:flashMessages  />
+
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header"><f:translate key="wizard.index.header" /></h1>
+						<h3><f:translate key="wizard.index.subheader" /></h3>
+						<p>&nbsp;</p>
+						<h4><f:translate key="wizard.index.option.type.header" /></h4>
+						<div class="row wizard-option-wrapper">
+							<div class="col-sm-6 col-xs-12 ">
+								<div class="row {f:if(condition:'{0:configuration.sliderType} == {0:\'normal\'}', then:'wizard-option-active')} wizard-option" >
+									<div class="col-xs-3">
+										<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-type-normal.png" alt="" title="" />
+									</div>
+									<div class="col-xs-9">
+										<h4><f:translate key="wizard.index.option.standard.header" /></h4>
+										<p><f:translate key="wizard.index.option.standard.text" /></p>
+									</div>
+									<f:form.radio property="sliderType" class="wizard-option-check" value="normal"/>
+								</div>
+
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="row {f:if(condition:'{0:configuration.sliderType} == {0:\'fullwidth\'}', then:'wizard-option-active')} wizard-option" >
+									<div class="col-xs-3">
+										<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-type-full-width.png" alt="" title="" />
+									</div>
+									<div class="col-xs-9">
+										<h4><f:translate key="wizard.index.option.fullwidth.header" /></h4>
+										<p><f:translate key="wizard.index.option.fullwidth.text" /></p>
+									</div>
+									<f:form.radio property="sliderType" class="wizard-option-check" value="fullwidth"/>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="row {f:if(condition:'{0:configuration.sliderType} == {0:\'fullsize\'}', then:'wizard-option-active')} wizard-option" >
+									<div class="col-xs-3">
+										<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-type-full-size.png" alt="" title="" />
+									</div>
+									<div class="col-xs-9">
+										<h4><f:translate key="wizard.index.option.fullsize.header" /></h4>
+										<p><f:translate key="wizard.index.option.fullsize.text" /></p>
+									</div>
+									<f:form.radio property="sliderType" class="wizard-option-check" value="fullsize"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div style="display: none;">
+					<f:form.textfield property="images" id="uidImageList"/>
+					<f:form.textfield property="controls" />
+					<f:form.textfield property="thumbs" />
+					<f:form.textfield property="duration" />
+					<f:form.textfield property="transition" />
+					<f:form.textfield property="pagewidth" />
+
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-xs-6">
+						<f:link.action class="btn btn-primary" action="list" controller="Slider"><i class="fa fa-chevron-circle-left"></i> <f:translate key="wizard.index.button.back" /></f:link.action>
+					</div>
+					<div class="col-xs-6">
+						<div class="text-right">
+							<f:form.button class="btn btn-info"  property="action" value="next"><i class="fa fa-file-image-o"></i> <f:translate key="wizard.index.button.next" /></f:form.button>
+						</div>
+					</div>
+				</div>
+
+			</f:form>
+		</div>
+	</f:section>
+</body>
+</html>

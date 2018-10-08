@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+
+	<f:section name="content">
+
+
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">{slider.title}</a>
+			</div>
+			<ul class="nav navbar-top-links navbar-right">
+				<li><f:link.action action="list" controller="Slider" ><i class="fa fa-bars"></i> Back</f:link.action></li>
+			</ul>
+		</nav>
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+			<f:flashMessages />
+
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Your slider needs some attention:</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Your Slider <strong>{slider.title}</strong> works with outdated image relations. Introducing TYPO3 Layerslider 5.4.3 the slider uses File Abstraction Layer.
+						In this case, all images must be updated now. Here is a list of images, that would be updated to FAL. Please select at this point a Filemount.
+						At this place the images for this Slider are stored. You can create a new filemount or folder first and come back later.
+						Your slider works in frontend with this version, but keep in mind that you can not edit this slider before you run the update here!
+					</p>
+
+					<f:form action="updatefal" object="{updateformsettings}" name="updateformsettings" method="post">
+						<f:form.hidden property="slider" />
+
+						<div class="panel panel-default">
+							<div class="panel-heading"><h3>Save images to this location</h3></div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon input-group-icon">
+											<span alt="" title="">
+												<span class="t3js-icon icon icon-size-small icon-state-default icon-mimetypes-x-sys_file_storage" data-identifier="mimetypes-x-sys_file_storage">
+													<span class="icon-markup">
+														<img src="/typo3/sysext/t3skin/icons/gfx/i/_icon_ftp.gif" width="16" height="16">
+													</span>
+												</span>
+											</span>
+										</span>
+										<div class="row">
+											<div class="col-xs-4 col-sm-4">
+												<f:form.select options="{storages}" optionLabelField="name" optionValueField="uid" property="storage" class="form-control" additionalAttributes="{onChange: 'this.form.submit()'}" />
+											</div>
+											<div class="col-xs-4 col-sm-4">
+												<f:form.select options="{foldersInResourceStorage}" optionLabelField="identifier" optionValueField="identifier" property="selectedFolder" class="form-control" />
+											</div>
+
+											<div class="col-xs-4 col-sm-4 text-right">
+												<f:form.submit class="btn btn-primary" value="Process with update" property="process" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</f:form>
+
+					<h3>Images that would be updated</h3>
+					<f:for each="{slider.slides}" as="slide">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="panel panel-default">
+									<div class="panel-heading"><h3>Slide Title: {slide.title}</h3></div>
+									<div class="panel-body">
+										<h4>Slide image</h4>
+										<f:image src="uploads/tx_layerslider/{slide.image}" maxWidth="300" />
+
+										<br /><br />
+										<f:if condition="{slide.items}">
+											<div class="row">
+												<f:for each="{slide.items}" as="item">
+													<f:if condition="{0:item.contenttype} == {0:'image'}">
+														<div class="col-xs-3 col-sm-1">
+															<h5>Layer: {item.title}</h5>
+															<f:image src="uploads/tx_layerslider/{item.content}" maxWidth="300" style="width: 100%; height: auto;" />
+														</div>
+													</f:if>
+												</f:for>
+											</div>
+										</f:if>
+									</div>
+								</div>
+							</div>
+						</div>
+						<h4></h4>
+					</f:for>
+
+				</div>
+			</div>
+
+		</div>
+	</f:section>
+</body>
+</html>

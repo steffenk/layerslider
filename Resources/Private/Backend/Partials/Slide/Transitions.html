@@ -1,0 +1,67 @@
+<div class="modal fade" id="transitionPanel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel"><f:translate key="partial.slide.transitions.header" /></h4>
+			</div>
+			<div class="modal-body container-fluid">
+				<div class="layerslider-transition-gallery">
+					<div class="inner">
+						<p>
+							<f:translate key="partial.slide.transitions.text" />
+						</p>
+
+						<div id="ls-transition-gallery">
+							<div class="table ls-transition-list" id="slide-transitions-2d">
+								<h2>2D slide transitions</h2>
+								<table class="table">
+									<thead>
+									<tr>
+										<th class="c">ID</th>
+										<th>Transition name</th>
+										<th class="c">ID</th>
+										<th>Transition name</th>
+									</tr>
+									</thead>
+									<tbody data-tr-type="2d_transitions"></tbody>
+								</table>
+							</div>
+							<div class="table ls-transition-list" id="slide-transitions-3d">
+								<h2>3D slide transitions</h2>
+								<table class="table">
+									<thead>
+									<tr>
+										<th class="c">ID</th>
+										<th>Transition name</th>
+										<th class="c">ID</th>
+										<th>Transition name</th>
+									</tr>
+									</thead>
+									<tbody data-tr-type="3d_transitions"></tbody>
+								</table>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+
+				<script>
+					var lsTrImgPath =  "{f:uri.resource(path:'Img/')}";
+					var pluginPath =  "{f:uri.resource(path:'')}";
+				</script>
+				<script src="{f:uri.resource(path:'JS/layerslider.transitiongallery.js')}"type="text/javascript"></script>
+
+
+			</div>
+			<div class="modal-footer">
+				<a href="#" type="button" class="btn btn-default" data-dismiss="modal"><f:translate key="modal.buttons.close" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+

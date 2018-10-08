@@ -1,0 +1,90 @@
+plugin.tx_layerslider {
+	view {
+		templateRootPath = {$plugin.tx_layerslider.view.templateRootPath}
+		partialRootPath= {$plugin.tx_layerslider.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_layerslider.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_layerslider.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		rewrittenPropertyMapper = 1
+		ignoreAllEnableFieldsInBe = 1
+	}
+	settings {
+	    tsIncluded = 1
+        useAdditionalBackendCSS.useInBE = {$plugin.tx_layerslider.settings.useAdditionalBackendCSS.useInBE}
+        useAdditionalBackendCSS.useInFE = {$plugin.tx_layerslider.settings.useAdditionalBackendCSS.useInFE}
+        useAdditionalBackendCSS.path = {$plugin.tx_layerslider.settings.useAdditionalBackendCSS.path}
+		skinsPath = {$plugin.tx_layerslider.settings.skinsPath}
+	}
+}
+
+// include jquery
+[globalVar = LIT:1 = {$plugin.tx_layerslider.settings.includeJquery}]
+page.includeJSlibs.jQuery1102 = EXT:layerslider/Resources/Public/JS/jquery-1.10.2.min.js
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_layerslider.settings.includeJqueryFooter}]
+page.includeJSFooterlibs.jQuery1102 = EXT:layerslider/Resources/Public/JS/jquery-1.10.2.min.js
+[global]
+
+page.includeJSFooterlibs.jQueryEasing = EXT:layerslider/Resources/Public/JS/jquery-easing-1.3.js
+page.includeJSFooterlibs.layersliderTransitions = EXT:layerslider/Resources/Public/JS/layerslider.transitions.js
+page.includeJSFooterlibs.layersliderGreensock = EXT:layerslider/Resources/Public/JS/greensock.js
+page.includeJSFooterlibs.layersliderMain = EXT:layerslider/Resources/Public/JS/layerslider.kreaturamedia.jquery.js
+page.includeJSFooter.layersliderInit = EXT:layerslider/Resources/Public/JS/layerslider.init.js
+
+page.includeCSS.layerslider = EXT:layerslider/Resources/Public/css/layerslider.css
+
+# include additional CSS file
+[globalVar = LIT:1 = {$plugin.tx_layerslider.settings.useAdditionalBackendCSS.useInFE}]
+    page.includeCSS.layersliderAdditional = {$plugin.tx_layerslider.settings.useAdditionalBackendCSS.path}
+[global]
+
+page.includeCSS.layerslider.media = all
+
+# Module configuration
+module.tx_layerslider {
+	persistence {
+		storagePid = {$plugin.tx_layerslider.persistence.storagePid}
+	}
+	view {
+		# cat=module.tx_layerslider/file; type=string; label=Path to template root (BE)
+		templateRootPaths.0= EXT:layerslider/Resources/Private/Backend/Templates/
+		# cat=module.tx_layerslider/file; type=string; label=Path to template partials (BE)
+		partialRootPaths.0 = EXT:layerslider/Resources/Private/Backend/Partials/
+		# cat=module.tx_layerslider/file; type=string; label=Path to template layouts (BE)
+		layoutRootPaths.0 = EXT:layerslider/Resources/Private/Backend/Layouts/
+	}
+	settings < plugin.tx_layerslider.settings
+	settings {
+		tsIncluded = 1
+	}
+	features < plugin.tx_layerslider.features
+}
+
+
+
+
+config.tx_extbase {
+	persistence {
+		classes {
+			MINAV\Layerslider\Domain\Model\File {
+				mapping {
+					tableName = sys_file
+					columns {
+						uid_local.mapOnProperty = originalFileIdentifier
+					}
+				}
+			}
+			MINAV\Layerslider\Domain\Model\FileReference {
+				mapping {
+					tableName = sys_file_reference
+				}
+			}
+		}
+		updateReferenceIndex = 1
+	}
+}

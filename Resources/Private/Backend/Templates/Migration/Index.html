@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+
+	<f:section name="content">
+
+
+
+		<f:render partial="Navbar" />
+
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+			<h1 class="page-header"><f:translate key="migration.index.header" /></h1>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><f:translate key="migration.index.information" /></strong>
+				</div>
+				<div class="panel-body">
+					<f:format.raw><f:translate key="migration.index.information.text" /></f:format.raw>
+				</div>
+			</div>
+
+			<div class="panel panel-info ">
+				<div class="panel-heading">
+					<strong><f:translate key="migration.index.uploadarea.header" /></strong>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="text-right" style="margin-bottom: 15px;">
+								<f:link.action action="index" class="btn btn-success"><f:translate key="migration.index.uploadarea.btn.recheck" /></f:link.action>
+							</div>
+
+							<div id="dropzoneC" class="dropzone">
+
+							</div>
+							<f:image class="img-responsive" src="EXT:layerslider/Resources/Public/Backend/img/ma-1.png" />
+						</div>
+
+						<script>
+							var url = "{f:uri.action(action:'upload', controller:'Migration')}";
+							Dropzone.options.dropzoneC = {
+								url: url.replace(/&amp;/g, '&'),
+								method: 'post',
+								acceptedFiles: '.css,.js,.png,.gif',
+								dictDefaultMessage: "{f:translate(key:'migration.index.uploadarea.defaultmessage.init')}",
+								queuecomplete: function(){
+									$('#dropzoneC .dz-default.dz-message').html("{f:translate(key:'migration.index.uploadarea.defaultmessage.extended')}").delay(2000).fadeIn();
+								},
+								sending: function(file, xhr, formData){
+									if(file.fullPath == null){
+										file.fullPath = '/';
+									}
+									formData.append("tx_layerslider_web_layersliderm1[filesize]", file.size);
+									formData.append("tx_layerslider_web_layersliderm1[filepath]", file.fullPath);
+									formData.append("tx_layerslider_web_layersliderm1[expectedFile]", file.name)
+								},
+								success: function(file, response){
+									if (file.previewElement) {
+										$(file.previewElement).delay(2000).fadeOut();
+										file.previewElement.classList.add("dz-success");
+									}
+								},
+
+							}
+						</script>
+
+					</div>
+				</div>
+			</div>
+
+
+			<f:for each="{filesToCheck}" as="file" iteration="i">
+
+				<div class="panel {f:if(condition:file.3, then:'panel-success', else:'panel-danger')} {f:if(condition:'{file.7} == 2', then:'panel-info')} ">
+					<div class="panel-heading">
+						<strong>{file.0}</strong>
+					</div>
+
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<f:if condition="{file.7} == 1">
+									<div class="row">
+										<div class="col-xs-8">
+											{file.1}
+										</div>
+										<div class="col-xs-4">
+											<strong>
+												<f:if condition="{file.3}">
+													<f:then>
+														<f:translate key="migration.index.file.exist" />
+													</f:then>
+													<f:else>
+														<f:translate key="migration.index.file.miss" />
+													</f:else>
+												</f:if>
+											</strong>
+										</div>
+									</div>
+								</f:if>
+
+
+								<f:if condition="{file.7} == 2">
+									<f:for each="{file.8}" as="skin">
+
+										<strong>{skin.0}</strong><br />
+
+										<f:for each="{skin.2}" as="skinFile">
+											<div class="row">
+												<div class="col-xs-8">
+													{skinFile.1}
+												</div>
+												<div class="col-xs-4">
+													<strong>
+														<f:if condition="{skinFile.3}">
+															<f:then>
+																<f:translate key="migration.index.file.exist" />
+															</f:then>
+															<f:else>
+																<f:translate key="migration.index.file.miss" />
+															</f:else>
+														</f:if>
+													</strong>
+												</div>
+											</div>
+										</f:for>
+										<br />
+									</f:for>
+								</f:if>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</f:for>
+
+
+		</div>
+	</f:section>
+</body>
+</html>

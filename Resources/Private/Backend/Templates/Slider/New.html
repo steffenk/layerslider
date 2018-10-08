@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+	<f:section name="content">
+
+
+		<f:render partial="Navbar" arguments="{editmode: 1}"/>
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0;">
+
+			<f:form action="create"  name="newSlider" id="sliderform" object="{newSlider}">
+
+				<f:render partial="FormErrors" />
+				<f:flashMessages />
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header"><f:translate key="slider.new.header" /></h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label for="title"><f:translate key="slider.new.form.title.label" /></label>
+							<f:form.textfield class="form-control" required="1" property="title" id="title"/>
+							<p class="help-block"><f:translate key="slider.new.form.title.text" /></p>
+						</div>
+					</div>
+				</div>
+
+			</f:form>
+		</div>
+	</f:section>
+</body>
+</html>

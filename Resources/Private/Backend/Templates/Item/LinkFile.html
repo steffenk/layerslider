@@ -1,0 +1,28 @@
+<tr data-itemimage="{item.uid}">
+    <td>
+        <f:translate key="partial.item.singleitem.tabs.basic.layercontent.label" />
+    </td>
+    <td>
+        <f:if condition="{item.falimage}">
+            <f:image src="{item.falimage.originalResource.originalFile.uid}" maxWidth="200" style="width: 100%; height:auto; max-width: 100%;" additionalAttributes="{data-itemurl:'{f:uri.image(src:\'{item.falimage.originalResource.originalFile.uid}\')}', data-element:'image-content'}"/>
+        </f:if>
+        <button type="button" class="btn btn-primary "  onclick="window.open('{fileWizardUrl}&bparams=item_{item.uid}|||gif,jpg,jpeg,tif,bmp,pcx,tga,png,pdf,ai|', 'myWindow', 'width=800, height=800, scrollbars=1')">
+            <f:translate key="button.addImages" />
+        </button>
+
+    </td>
+    <td>
+        <f:flashMessages />
+        <f:if condition="{item.falimage}">
+            <div class="form-group">
+                <label for=""><f:translate key="item.linkfile.image.title" /></label>
+                <input name="tx_layerslider_web_layersliderm1[slider][formslides][{item.slide.uid}][formitems][{item.uid}][fileReference][title]" type='text' class="form-control" value="{item.falimage.originalResource.title}" />
+
+            </div>
+            <div class="form-group">
+                <label for=""><f:translate key="item.linkfile.image.alternative" /></label>
+                <input name="tx_layerslider_web_layersliderm1[slider][formslides][{item.slide.uid}][formitems][{item.uid}][fileReference][alternative]" type='text' class="form-control" value="{item.falimage.originalResource.alternative}" />
+            </div>
+        </f:if>
+    </td>
+</tr>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+	<f:section name="content">
+
+		<f:render partial="Navbar" />
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0; padding-bottom: 40px;">
+			<f:form action="save"  name="configuration" id="sliderform" object="{configuration}">
+
+
+				<f:render partial="FormErrors" />
+				<f:flashMessages />
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header"><f:translate key="wizard.step2.header" /></h1>
+						<h3><f:translate key="wizard.step2.subheader" /></h3>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="row">
+
+
+
+
+					<div class="col-xs-12">
+						<div class="panel">
+							<div class="panel-heading">
+								<strong><f:translate key="wizard.step2.slides.header" /></strong>
+							</div>
+
+							<div class="panel-body">
+								<f:for each="{imageStorage}" as="image">
+									<f:image src="{image.uid}" alt="" title="" maxWidth="100" class="responsive-image slides-image-wizard-list"/>
+								</f:for>
+							</div>
+						</div>
+
+					</div>
+
+
+					<f:if condition="{0:configuration.sliderType} == {0:'fullwidth'}">
+						<div class="col-xs-12">
+							<div class="panel">
+								<div class="panel-heading">
+									<h5><f:translate key="wizard.step2.slides.settings.fullwidth.header" /></h5>
+								</div>
+
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-sm-6 col-xs-12 wizard-option-wrapper">
+											<div class="row wizard-option-passive" >
+												<div class="col-xs-3">
+													<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/full-width-page-width.png" alt="" title="" />
+												</div>
+												<div class="col-xs-9">
+													<h4><f:translate key="wizard.step2.slides.settings.fullwidth.pagewidth.header" /></h4>
+													<f:format.raw><f:translate key="wizard.step2.slides.settings.fullwidth.pagewidth.text" /></f:format.raw>
+													<f:form.textfield property="pagewidth" class="form-control" type="number" />
+												</div>
+											</div>
+
+
+										</div>
+										<div class="col-sm-6 col-xs-12">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</f:if>
+
+
+					<div class="col-xs-12">
+						<div class="panel">
+							<div class="panel-heading">
+								<h5><f:translate key="wizard.step2.slides.settings.controls.header" /></h5>
+							</div>
+
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6 col-xs-12 wizard-option-wrapper">
+										<div class="row {f:if(condition:'{0:configuration.controls} == {0:\'light\'}', then:'wizard-option-active')} wizard-option" >
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-light-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.controls.light.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.controls.light.text" /></p>
+											</div>
+											<f:form.radio property="controls" class="wizard-option-check" value="light"/>
+										</div>
+
+										<div class="row {f:if(condition:'{0:configuration.controls} == {0:\'dark\'}', then:'wizard-option-active')} wizard-option">
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-dark-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.controls.dark.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.controls.dark.text" /></p>
+											</div>
+											<f:form.radio property="controls" class="wizard-option-check" value="dark"/>
+
+										</div>
+
+
+										<div class="row {f:if(condition:'{0:configuration.controls} == {0:\'no\'}', then:'wizard-option-active')} wizard-option" >
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-no-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.controls.no.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.controls.no.text" /></p>
+											</div>
+											<f:form.radio property="controls" class="wizard-option-check" value="no"/>
+										</div>
+
+									</div>
+									<div class="col-sm-6 col-xs-12 wizard-option-wrapper">
+										<div class="row {f:if(condition:'{0:configuration.thumbs} == {0:\'hover\'}', then:'wizard-option-active')} wizard-option">
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-thumb-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.thumbs.hover.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.thumbs.hover.text" /></p>
+											</div>
+											<f:form.radio property="thumbs" class="wizard-option-check" value="hover"/>
+										</div>
+
+										<div class="row {f:if(condition:'{0:configuration.thumbs} == {0:\'always\'}', then:'wizard-option-active')} wizard-option">
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-thumb-always-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.thumbs.always.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.thumbs.always.text" /></p>
+											</div>
+											<f:form.radio property="thumbs" class="wizard-option-check" value="always"/>
+										</div>
+
+										<div class="row  {f:if(condition:'{0:configuration.thumbs} == {0:\'hide\'}', then:'wizard-option-active')} wizard-option" >
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-dark-controlls.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.thumbs.hide.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.thumbs.hide.text" /></p>
+											</div>
+											<f:form.radio property="thumbs" class="wizard-option-check" value="hide"/>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+					<div class="col-xs-12">
+						<div class="panel">
+							<div class="panel-heading">
+								<h5><f:translate key="wizard.step2.slides.settings.timingeffect.header" /></h5>
+							</div>
+
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6 col-xs-12 wizard-option-wrapper">
+										<div class="row wizard-option-passive" >
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-slide-timing.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.timingeffect.timing.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.timingeffect.timing.text" /></p>
+													<f:form.select class="form-control" name="duration" property="duration" options="{1:1000, 2:2000, 3:3000, 4:4000, 5:5000, 6:6000, 7:7000, 8:8000, 9:9000, 10:10000}" />
+											</div>
+										</div>
+
+
+									</div>
+									<div class="col-sm-6 col-xs-12 wizard-option-wrapper">
+										<div class="row wizard-option-passive" >
+											<div class="col-xs-3">
+												<f:image class="slider-options-image responsive-image" src="EXT:layerslider/Resources/Public/Icons/slider-slide-fx.png" alt="" title="" />
+											</div>
+											<div class="col-xs-9">
+												<h4><f:translate key="wizard.step2.slides.settings.timingeffect.effect.header" /></h4>
+												<p><f:translate key="wizard.step2.slides.settings.timingeffect.effect.text" /></p>
+												<f:form.select class="form-control" name="transition" property="transition" options="{1:'Slide from right', 2:'Slide from left', 5:'Fade', 6:'Fading tiles'}" />
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div style="display: none;">
+					<f:form.textfield property="images" id="uidImageList" style="display: none;"/>
+					<f:form.textfield property="sliderType" style="display: none;"/>
+				</div>
+				<p>&nbsp;</p>
+				<div class="row">
+					<div class="col-xs-6">
+						<f:form.button class="btn btn-primary"  property="action" value="prev"><i class="fa fa-chevron-circle-left"></i> <f:translate key="wizard.step2.button.back" /></f:form.button>
+					</div>
+					<div class="col-xs-6">
+						<div class="text-right">
+							<f:form.button class="btn btn-info"  property="action" value="next"><i class="fa fa-floppy-o"></i> <f:translate key="wizard.step2.button.next" /></f:form.button>
+						</div>
+					</div>
+				</div>
+
+			</f:form>
+		</div>
+	</f:section>
+</body>
+</html>

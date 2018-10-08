@@ -1,0 +1,24 @@
+<div class="col-lg-12">
+    <h3 class="page-header"><f:translate key="slider.list.news" /></h3>
+
+    <div class="row">
+        <f:for each="{news.channel.item}" as="item">
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading" style="min-height: 52px;">
+                        <strong>{item.title}</strong>
+                    </div>
+                    <div class="panel-body news-panel-body" style="height: 350px; overflow-x: scroll; color: #999">
+                        <f:format.raw>{item.bodytext}</f:format.raw>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <a href="{news.channel.link}{item.link}" target="blank"><f:translate key="slider.list.news.more" /></a>
+                    </div>
+                </div>
+
+            </div>
+        </f:for>
+
+    </div>
+</div>

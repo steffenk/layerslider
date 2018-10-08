@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-06T14:47:41Z" product-name="layerslider">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_layerslider_domain_model_slider">
+				<source>Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_slider.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_slider.slides">
+				<source>Slides</source>
+			</trans-unit>
+
+			<trans-unit id="tx_layerslider_domain_model_slide">
+				<source>Slide</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_slide.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_slide.items">
+				<source>Items</source>
+			</trans-unit>
+
+			<trans-unit id="tx_layerslider_domain_model_item">
+				<source>Item</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_item.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_item.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_item.configuration">
+				<source>Configuration</source>
+			</trans-unit>
+			<trans-unit id="tx_layerslider_domain_model_item.link">
+				<source>Link</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

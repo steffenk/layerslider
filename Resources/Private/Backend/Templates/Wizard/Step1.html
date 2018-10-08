@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
+<body>
+
+	<f:layout name="Default" />
+	<f:section name="content">
+
+
+		<f:render partial="Navbar" />
+
+		<div id="page-wrapper" style="min-height: 1267px; margin-left: 0; padding-bottom: 40px;">
+			<f:form action="step2"  name="configuration" id="sliderform" object="{configuration}">
+
+				<f:render partial="FormErrors" />
+				<f:flashMessages />
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header"><f:translate key="wizard.step1.header" /></h1>
+						<f:format.raw><f:translate key="wizard.step1.text" /></f:format.raw>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" style="margin-bottom: 5px;">
+							<div class="col-lg-12">
+								<div class="text-right">
+									<button type="button" class="btn btn-success "  onclick="window.open('{fileWizardUrl}&bparams=slide_{slide.uid}|||gif,jpg,jpeg,tif,bmp,pcx,tga,png,pdf,ai|', 'myWindow', 'width=800, height=800, scrollbars=1')">
+										<f:translate key="button.addImages" />
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="image-wrapper-sortable">
+
+							<f:for each="{imageStorage}" as="image">
+								<div class="wizard-image-wrapper">
+									<f:image src="{image.uid}" alt="" title="" maxWidth="400" additionalAttributes="{data-uid:'{image.uid}'}" class="responsive-image"/>
+									<div class="bottom-tools">
+										<i class="fa fa-arrows"></i><i class="fa fa-trash-o" onclick="removeWizardImage(this);"></i>
+									</div>
+								</div>
+							</f:for>
+
+						</div>
+						<div style="display: none;">
+							<f:form.textfield property="images" id="uidImageList"/>
+							<f:form.textfield property="sliderType"/>
+							<f:form.textfield property="controls" />
+							<f:form.textfield property="thumbs" />
+							<f:form.textfield property="duration" />
+							<f:form.textfield property="transition" />
+							<f:form.textfield property="pagewidth" />
+
+						</div>
+						<hr />
+						<div class="row">
+							<div class="col-xs-6">
+								<f:form.button class="btn btn-primary"  property="action" value="prev"><i class="fa fa-chevron-circle-left"></i> <f:translate key="wizard.step1.button.back" /></f:form.button>
+							</div>
+							<div class="col-xs-6">
+								<div class="text-right">
+									<f:form.button class="btn btn-info"  property="action" value="next"><f:translate key="wizard.step1.button.next" /></f:form.button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+
+					function setFormValueFromBrowseWin(element,uid,filename){
+						var url = '{f:uri.action(action:"getimage", controller:"Wizard")}';
+						url = url+"&amp;tx_layerslider_web_layersliderm1[file]="+uid;
+						$.ajax({
+							type: "GET",
+							url: url.replace(/&amp;/g, '&')
+						}).done(function( data ) {
+							var bottomTools = $('<div />').addClass('bottom-tools').append('<i class="fa fa-arrows"></i>').append('<i class="fa fa-trash-o" onclick="removeWizardImage(this);"></i>');
+							var image = $('<img />').prop('src', data).addClass('responsive-image').data('uid', uid);
+							var wrapper = $('<div />').addClass('wizard-image-wrapper').append(image).append(bottomTools);
+							$('.image-wrapper-sortable').append(wrapper);
+							makeSlideImagesSortable();
+						});
+					}
+					makeSlideImagesSortable();
+
+
+				</script>
+			</f:form>
+		</div>
+	</f:section>
+</body>
+</html>

@@ -1,0 +1,178 @@
+{namespace mru=MINAV\Layerslider\ViewHelpers}
+<f:section name="class">ls-l{f:if(condition: '{item.configuration.cssclass}', then:' {item.configuration.cssclass}')}</f:section>
+
+<f:section name="data">
+  {f:if(condition: '{item.configuration.position}', then:'position:{item.configuration.position};')}
+  {f:if(condition: '{item.configuration.minmobilefontsize}', then:'minmobilefontsize:{item.configuration.minmobilefontsize};')}
+  {f:if(condition: '{item.configuration.minfontsize}', then:'minfontsize:{item.configuration.minfontsize};')}
+  {f:if(condition: '{item.configuration.keyframe}', then:'keyframe:true;', else:'keyframe:false;')}
+  {f:if(condition: '{item.configuration.static}', then:'static:{item.configuration.static};')}
+  {f:if(condition: '{item.configuration.transitionin}', then:'transitionin:true;', else:'transitionin:false;')}
+  {f:if(condition: '{item.configuration.offsetxin}', then:'offsetxin:{item.configuration.offsetxin};')}
+  {f:if(condition: '{item.configuration.offsetyin}', then:'offsetyin:{item.configuration.offsetyin};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.durationin)} > 0', then:'durationin:{item.configuration.durationin};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.startatin)} > 0', then:'startatin:{item.configuration.startatin};')}
+  {f:if(condition: '{item.configuration.easingin}', then:'easingin:{item.configuration.easingin};')}
+  {f:if(condition: '{item.configuration.fadein}', then:'fadein:true;', else:'fadein:false;')}
+  {f:if(condition: '{item.configuration.rotatein}', then:'rotatein:{item.configuration.rotatein};')}
+  {f:if(condition: '{item.configuration.rotatexin}', then:'rotatexin:{item.configuration.rotatexin};')}
+  {f:if(condition: '{item.configuration.rotateyin}', then:'rotateyin:{item.configuration.rotateyin};')}
+  {f:if(condition: '{item.configuration.skewxin}', then:'skewxin:{item.configuration.skewxin};')}
+  {f:if(condition: '{item.configuration.skewyin}', then:'skewxin:{item.configuration.skewyin};')}
+  {f:if(condition: '{item.configuration.scalexin}', then:'scalexin:{item.configuration.scalexin};')}
+  {f:if(condition: '{item.configuration.scaleyin}', then:'scaleyin:{item.configuration.scaleyin};')}
+  {f:if(condition: '{item.configuration.transformoriginin}', then:'transformoriginin:{item.configuration.transformoriginin};')}
+  {f:if(condition: '{item.configuration.clipin}', then:'clipin:{item.configuration.clipin};')}
+  {f:if(condition: '{item.configuration.bgcolorin}', then:'bgcolorin:{item.configuration.bgcolorin};')}
+  {f:if(condition: '{item.configuration.colorin}', then:'colorin:{item.configuration.colorin};')}
+  {f:if(condition: '{item.configuration.radiusin}', then:'radiusin:{item.configuration.radiusin};')}
+  {f:if(condition: '{item.configuration.widthin}', then:'widthin:{item.configuration.widthin};')}
+  {f:if(condition: '{item.configuration.heightin}', then:'heightin:{item.configuration.heightin};')}
+  {f:if(condition: '{item.configuration.filterin}', then:'filterin:{item.configuration.filterin};')}
+  {f:if(condition: '{item.configuration.transformperspectivein}', then:'transformperspectivein:{item.configuration.transformperspectivein};')}
+
+
+  {f:if(condition: '{item.configuration.transitionout}', then:'transitionout:true;', else:'transitionout:false;')}
+  {f:if(condition: '{item.configuration.offsetxout}', then:'offsetxout:{item.configuration.offsetxout};')}
+  {f:if(condition: '{item.configuration.offsetyout}', then:'offsetyout:{item.configuration.offsetyout};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.durationout)} > 0', then:'durationout:{item.configuration.durationout};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.startatout)} > 0', then:'startatout:{item.configuration.startatout};')}
+  {f:if(condition: '{item.configuration.easingout}', then:'easingout:{item.configuration.easingout};')}
+  {f:if(condition: '{item.configuration.fadeout}', then:'fadeout:true;', else:'fadeout:false;')}
+  {f:if(condition: '{item.configuration.rotateout}', then:'rotateout:{item.configuration.rotateout};')}
+  {f:if(condition: '{item.configuration.rotatexout}', then:'rotatexout:{item.configuration.rotatexout};')}
+  {f:if(condition: '{item.configuration.rotateyout}', then:'rotateyout:{item.configuration.rotateyout};')}
+  {f:if(condition: '{item.configuration.skewxout}', then:'skewxout:{item.configuration.skewxout};')}
+  {f:if(condition: '{item.configuration.skewyout}', then:'skewyout:{item.configuration.skewyout};')}
+  {f:if(condition: '{item.configuration.scalexout}', then:'scalexout:{item.configuration.scalexout};')}
+  {f:if(condition: '{item.configuration.scaleyout}', then:'scaleyout:{item.configuration.scaleyout};')}
+  {f:if(condition: '{item.configuration.transformoriginout}', then:'transformoriginout:{item.configuration.transformoriginout};')}
+  {f:if(condition: '{item.configuration.clipout}', then:'clipout:{item.configuration.clipout};')}
+  {f:if(condition: '{item.configuration.bgcolorout}', then:'bgcolorout:{item.configuration.bgcolorout};')}
+  {f:if(condition: '{item.configuration.colorout}', then:'colorout:{item.configuration.colorout};')}
+  {f:if(condition: '{item.configuration.radiusout}', then:'radiusout:{item.configuration.radiusout};')}
+  {f:if(condition: '{item.configuration.widthout}', then:'widthout:{item.configuration.widthout};')}
+  {f:if(condition: '{item.configuration.heightout}', then:'heightout:{item.configuration.heightout};')}
+  {f:if(condition: '{item.configuration.filterout}', then:'filterout:{item.configuration.filterout};')}
+  {f:if(condition: '{item.configuration.transformperspectiveout}', then:'transformperspectiveout:{item.configuration.transformperspectiveout};')}
+
+  {f:if(condition: '{item.configuration.parallax}', then:'parallax:true;', else:'parallax:false;')}
+  {f:if(condition: '{item.configuration.parallaxlevel}', then:'parallaxlevel:{item.configuration.parallaxlevel};')}
+  {f:if(condition: '{item.configuration.parallaxtype}', then:'parallaxtype:{item.configuration.parallaxtype};')}
+  {f:if(condition: '{item.configuration.parallaxevent}', then:'parallaxevent:{item.configuration.parallaxevent};')}
+  {f:if(condition: '{item.configuration.parallaxaxis}', then:'parallaxaxis:{item.configuration.parallaxaxis};')}
+  {f:if(condition: '{item.configuration.parallaxtransformorigin}', then:'parallaxtransformorigin:{item.configuration.parallaxtransformorigin};')}
+
+  <f:if condition="{item.configuration.loop}">
+  {f:if(condition: '{item.configuration.loop}', then:'loop:true;', else:'loop:false;')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.loopstartat)} > 0', then:'loopstartat:{item.configuration.loopstartat};')}
+  {f:if(condition: '{item.configuration.loopoffsetx}', then:'loopoffsetx:{item.configuration.loopoffsetx};')}
+  {f:if(condition: '{item.configuration.loopoffsety}', then:'loopoffsety:{item.configuration.loopoffsety};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.loopstartat)} > 0', then:'loopduration:{item.configuration.loopduration};')}
+  {f:if(condition: '{item.configuration.loopeasing}', then:'loopeasing:{item.configuration.loopeasing};')}
+  {f:if(condition: '{item.configuration.loopopacity}', then:'loopopacity:{item.configuration.loopopacity};')}
+  {f:if(condition: '{item.configuration.looprotate}', then:'looprotate:{item.configuration.looprotate};')}
+  {f:if(condition: '{item.configuration.looprotatex}', then:'looprotatex:{item.configuration.looprotatex};')}
+  {f:if(condition: '{item.configuration.looprotatey}', then:'looprotatey:{item.configuration.looprotatey};')}
+  {f:if(condition: '{item.configuration.loopskewx}', then:'loopskewx:{item.configuration.loopskewx};')}
+  {f:if(condition: '{item.configuration.loopskewx}', then:'loopskewx:{item.configuration.loopskewx};')}
+  {f:if(condition: '{item.configuration.loopscalex}', then:'loopscalex:{item.configuration.loopscalex};')}
+  {f:if(condition: '{item.configuration.loopscaley}', then:'loopscaley:{item.configuration.loopscaley};')}
+  {f:if(condition: '{item.configuration.looptransformorigin}', then:'looptransformorigin:{item.configuration.looptransformorigin};')}
+  {f:if(condition: '{item.configuration.loopclip}', then:'loopclip:{item.configuration.loopclip};')}
+  {f:if(condition: '{item.configuration.loopcount}', then:'loopcount:{item.configuration.loopcount};')}
+  {f:if(condition: '{item.configuration.looprepeatdelay}', then:'looprepeatdelay:{item.configuration.looprepeatdelay};')}
+  {f:if(condition: '{item.configuration.loopyoyo}', then:'loopyoyo:true;', else:'loopyoyo:false;')}
+  {f:if(condition: '{item.configuration.looptransformperspective}', then:'looptransformperspective:{item.configuration.looptransformperspective};')}
+  {f:if(condition: '{item.configuration.loopfilter}', then:'loopfilter:{item.configuration.loopfilter};')}
+  </f:if>
+
+  <f:if condition="{item.configuration.hover}">
+  {f:if(condition: '{item.configuration.hover}', then:'hover:true;', else:'hover:false;')}
+  {f:if(condition: '{item.configuration.hoveroffsetx}', then:'hoveroffsetx:{item.configuration.hoveroffsetx};')}
+  {f:if(condition: '{item.configuration.hoveroffsety}', then:'hoveroffsety:{item.configuration.hoveroffsety};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.hoverdurationin)} > 0', then:'hoverdurationin:{item.configuration.hoverdurationin};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.hoverdurationout)} > 0', then:'hoverdurationout:{item.configuration.hoverdurationout};')}
+  {f:if(condition: '{item.configuration.hovereasingin}', then:'hovereasingin:{item.configuration.hovereasingin};')}
+  {f:if(condition: '{item.configuration.hovereasingout}', then:'hovereasingout:{item.configuration.hovereasingout};')}
+  {f:if(condition: '{item.configuration.hoveropacity}', then:'hoveropacity:{item.configuration.hoveropacity};')}
+  {f:if(condition: '{item.configuration.hoverrotate}', then:'hoverrotate:{item.configuration.hoverrotate};')}
+  {f:if(condition: '{item.configuration.hoverrotatex}', then:'hoverrotatex:{item.configuration.hoverrotatex};')}
+  {f:if(condition: '{item.configuration.hoverrotatey}', then:'hoverrotatey:{item.configuration.hoverrotatey};')}
+  {f:if(condition: '{item.configuration.hoverskewx}', then:'hoverskewx:{item.configuration.hoverskewx};')}
+  {f:if(condition: '{item.configuration.hoverskewy}', then:'hoverskewy:{item.configuration.hoverskewy};')}
+  {f:if(condition: '{item.configuration.hoverscalex}', then:'hoverscalex:{item.configuration.hoverscalex};')}
+  {f:if(condition: '{item.configuration.hoverscaley}', then:'hoverscaley:{item.configuration.hoverscaley};')}
+  {f:if(condition: '{item.configuration.hovertransformorigin}', then:'hovertransformorigin:{item.configuration.hovertransformorigin};')}
+  {f:if(condition: '{item.configuration.hoverbgcolor}', then:'hoverbgcolor:{item.configuration.hoverbgcolor};')}
+  {f:if(condition: '{item.configuration.hovercolor}', then:'hovercolor:{item.configuration.hovercolor};')}
+  {f:if(condition: '{item.configuration.hoverborderradius}', then:'hoverborderradius:{item.configuration.hoverborderradius};')}
+  {f:if(condition: '{item.configuration.hovertransformperspective}', then:'hovertransformperspective:{item.configuration.hovertransformperspective};')}
+  {f:if(condition: '{item.configuration.hoveralwaysontop}', then:'hoveralwaysontop:{item.configuration.hoveralwaysontop};')}
+  </f:if>
+
+  <f:if condition="{item.configuration.texttransitionin}">
+  {f:if(condition: '{item.configuration.texttransitionin}', then:'texttransitionin:true;', else:'texttransitionin:false;')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textstartatin)} > 0', then:'textstartatin:{item.configuration.textstartatin};')}
+  {f:if(condition: '{item.configuration.texttypein}', then:'texttypein:{item.configuration.texttypein};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textshiftin)} > 0', then:'textshiftin:{item.configuration.textshiftin};')}
+  {f:if(condition: '{item.configuration.textoffsetxin}', then:'textoffsetxin:{item.configuration.textoffsetxin};')}
+  {f:if(condition: '{item.configuration.textoffsetyin}', then:'textoffsetyin:{item.configuration.textoffsetyin};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textdurationin)} > 0', then:'textdurationin:{item.configuration.textdurationin};')}
+  {f:if(condition: '{item.configuration.texteasingin}', then:'texteasingin:{item.configuration.texteasingin};')}
+  {f:if(condition: '{item.configuration.textfadein}', then:'textfadein:true;', else:'textfadein:false;')}
+  {f:if(condition: '{item.configuration.textrotatein}', then:'textrotatein:{item.configuration.textrotatein};')}
+  {f:if(condition: '{item.configuration.textrotatexin}', then:'textrotatexin:{item.configuration.textrotatexin};')}
+  {f:if(condition: '{item.configuration.textrotateyin}', then:'textrotateyin:{item.configuration.textrotateyin};')}
+  {f:if(condition: '{item.configuration.textscalexin}', then:'textscalexin:{item.configuration.textscalexin};')}
+  {f:if(condition: '{item.configuration.textscaleyin}', then:'textscaleyin:{item.configuration.textscaleyin};')}
+  {f:if(condition: '{item.configuration.textskewxin}', then:'textskewxin:{item.configuration.textskewxin};')}
+  {f:if(condition: '{item.configuration.textskewyin}', then:'textskewyin:{item.configuration.textskewyin};')}
+  {f:if(condition: '{item.configuration.texttransformoriginin}', then:'texttransformoriginin:{item.configuration.texttransformoriginin};')}
+  {f:if(condition: '{item.configuration.texttransformperspectivein}', then:'texttransformperspectivein:{item.configuration.texttransformperspectivein};')}
+  </f:if>
+
+
+  <f:if condition="{item.configuration.texttransitionout}">
+  {f:if(condition: '{item.configuration.texttransitionout}', then:'texttransitionout:true;', else:'texttransitionout:false;')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textstartatout)} > 0', then:'textstartatout:{item.configuration.textstartatout};')}
+  {f:if(condition: '{item.configuration.texttypeout}', then:'texttypeout:{item.configuration.texttypeout};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textshiftout)} > 0', then:'textshiftout:{item.configuration.textshiftout};')}
+  {f:if(condition: '{item.configuration.textoffsetxout}', then:'textoffsetxout:{item.configuration.textoffsetxout};')}
+  {f:if(condition: '{item.configuration.textoffsetyout}', then:'textoffsetyout:{item.configuration.textoffsetyout};')}
+  {f:if(condition: '{mru:strlen(string:item.configuration.textdurationout)} > 0', then:'textdurationout:{item.configuration.textdurationout};')}
+  {f:if(condition: '{item.configuration.texteasingout}', then:'texteasingout:{item.configuration.texteasingout};')}
+  {f:if(condition: '{item.configuration.textfadeout}', then:'textfadeout:true;', else:'textfadeout:false;')}
+  {f:if(condition: '{item.configuration.textrotateout}', then:'textrotateout:{item.configuration.textrotateout};')}
+  {f:if(condition: '{item.configuration.textrotatexout}', then:'textrotatexout:{item.configuration.textrotatexout};')}
+  {f:if(condition: '{item.configuration.textrotateyout}', then:'textrotateyout:{item.configuration.textrotateyout};')}
+  {f:if(condition: '{item.configuration.textscalexout}', then:'textscalexout:{item.configuration.textscalexout};')}
+  {f:if(condition: '{item.configuration.textscaleyout}', then:'textscaleyout:{item.configuration.textscaleyout};')}
+  {f:if(condition: '{item.configuration.textskewxout}', then:'textskewxout:{item.configuration.textskewxout};')}
+  {f:if(condition: '{item.configuration.textskewyout}', then:'textskewyout:{item.configuration.textskewyout};')}
+  {f:if(condition: '{item.configuration.texttransformoriginout}', then:'texttransformoriginout:{item.configuration.texttransformoriginout};')}
+  {f:if(condition: '{item.configuration.texttransformperspectiveout}', then:'texttransformperspectiveout:{item.configuration.texttransformperspectiveout};')}
+</f:if>
+
+</f:section>
+
+<f:section name="style">
+position:absolute;{f:if(condition: '{mru:strlen(string:item.configuration.left)} > 0', then:'left:{item.configuration.left}px;')}
+{f:if(condition: '{item.configuration.top}', then:'top:{item.configuration.top}px;')}
+{f:if(condition: '{item.configuration.width}', then:'width:{item.configuration.width}px;')}
+{f:if(condition: '{item.configuration.height}', then:'height:{item.configuration.height}px;')}
+{f:if(condition: '{item.configuration.textalign}', then:'text-align:{item.configuration.textalign};')}
+{f:if(condition: '{item.configuration.fontsize}', then:'font-size:{item.configuration.fontsize}px;')}
+{f:if(condition: '{item.configuration.color}', then:'color:{item.configuration.color};')}
+{f:if(condition: '{item.configuration.bgcolor}', then:'background:{item.configuration.bgcolor};')}
+{f:if(condition: '{item.configuration.paddingtop}', then:'padding-top:{item.configuration.paddingtop}px;')}
+{f:if(condition: '{item.configuration.paddingright}', then:'padding-right:{item.configuration.paddingright}px;')}
+{f:if(condition: '{item.configuration.paddingbottom}', then:'padding-bottom:{item.configuration.paddingbottom}px;')}
+{f:if(condition: '{item.configuration.paddingleft}', then:'padding-left:{item.configuration.paddingleft}px;')}
+{f:if(condition: '{item.configuration.bordertop}', then:'border-top:{item.configuration.bordertop};')}
+{f:if(condition: '{item.configuration.borderright}', then:'border-right:{item.configuration.borderright};')}
+{f:if(condition: '{item.configuration.borderbottom}', then:'border-bottom:{item.configuration.borderbottom};')}
+{f:if(condition: '{item.configuration.borderleft}', then:'border-left:{item.configuration.borderleft};')}
+{f:if(condition: '{item.configuration.cssstyles}', then:'{item.configuration.cssstyles}')}
+</f:section>
+
